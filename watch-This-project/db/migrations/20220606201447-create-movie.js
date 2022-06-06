@@ -35,10 +35,10 @@ module.exports = {
         type: Sequelize.INTEGER,
         references: { model: 'Reviews' }
       },
-      shelfId: {
-        type: Sequelize.INTEGER,
-        references: { model: 'Shelves' }
-      },
+      // shelfId: {
+      //   type: Sequelize.INTEGER,
+      //   references: { model: 'Shelves' }
+      // },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

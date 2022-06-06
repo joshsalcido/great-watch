@@ -6,8 +6,13 @@ module.exports = (sequelize, DataTypes) => {
     movieId: DataTypes.INTEGER
   }, {});
   Shelf.associate = function (models) {
+    const columnMapping = {
+      through: "MovieShelf",
+      otherKey: "movieId",
+      foreignKey: "shelfId",
+    };
+    Shelf.belongsToMany(models.Movie, columnMapping);
     Shelf.belongsTo(models.User, { foreignKey: 'userId' });
-    Shelf.belongsToMany(models.Movie, { foreignKey: 'movieId' });
   };
   return Shelf;
 };
