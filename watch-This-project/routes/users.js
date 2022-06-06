@@ -4,7 +4,7 @@ const db = require('../db/models');
 const bcrypt = require('bcryptjs');
 const { validationResult , check} = require('express-validator');
 
-
+// okay
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
