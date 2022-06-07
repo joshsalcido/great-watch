@@ -8,6 +8,7 @@ const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const indexRouter = require('./routes/index');
 const bananasRouter = require('./routes/users');
+const userRouter = require('./routes/users');
 // hello
 const app = express();
 
