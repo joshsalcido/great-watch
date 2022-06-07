@@ -1,13 +1,17 @@
-'use strict';
+"use strict";
 module.exports = (sequelize, DataTypes) => {
-  const Review = sequelize.define('Review', {
-    rating: DataTypes.INTEGER,
-    reviewBody: DataTypes.TEXT,
-    userId: DataTypes.INTEGER
-  }, {});
+  const Review = sequelize.define(
+    "Review",
+    {
+      rating: DataTypes.INTEGER,
+      reviewBody: DataTypes.TEXT,
+      userId: DataTypes.INTEGER,
+    },
+    {}
+  );
   Review.associate = function (models) {
-    Review.belongsTo(models.User, { foreignKey: 'userId' });
-    Review.belongsTo(models.Movie, { foreignKey: 'reviewId' });
+    Review.belongsTo(models.User, { foreignKey: "userId" });
+    Review.belongsTo(models.Movie, { foreignKey: "id" });
   };
   return Review;
 };
