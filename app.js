@@ -4,10 +4,11 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const { sequelize } = require("./db/models");
+const { restoreUser } = require('./auth');
 const session = require("express-session");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const indexRouter = require("./routes/index");
-const bananasRouter = require("./routes/users");
+const usersRouter = require("./routes/users");
 // hello
 const app = express();
 
@@ -36,7 +37,7 @@ app.use(
 store.sync();
 
 app.use("/", indexRouter);
-app.use("/bananas", bananasRouter);
+app.use("/users", usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
