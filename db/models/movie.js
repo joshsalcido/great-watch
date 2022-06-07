@@ -7,10 +7,10 @@ module.exports = (sequelize, DataTypes) => {
       poster: DataTypes.STRING,
       director: DataTypes.STRING,
       release: DataTypes.INTEGER,
-      genreId: DataTypes.INTEGER,
+      genre: DataTypes.STRING,
       reviewId: DataTypes.INTEGER,
       ratingId: DataTypes.INTEGER,
-      shelfId: DataTypes.INTEGER,
+      // shelfId: DataTypes.INTEGER,
     },
     {}
   );

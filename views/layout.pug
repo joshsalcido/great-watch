@@ -4,5 +4,9 @@ html
       block head
         title="Watch This!"
         link(rel='stylesheet' href='/stylesheets/reset.css')
+        script(src="../auth.js")
   body
+    div.nav-bar
+      a.home(href='/home') Home
+      a.movies(href='/movies') Movies
     block content
