@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
   const Shelf = sequelize.define('Shelf', {
     name: DataTypes.STRING,
     userId: DataTypes.INTEGER,
-    movieId: DataTypes.INTEGER
+   // movieId: DataTypes.INTEGER
   }, {});
   Shelf.associate = function (models) {
     const columnMapping = {
