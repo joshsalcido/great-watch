@@ -1,0 +1,8 @@
+extends layout.pug
+
+block content
+  h2= movie.title
+  img.movie-img(src=`${movie.poster}`)
+  p Directed By: #{movie.director}
+  p Released: #{movie.release}
+  p Genre(s): #{movie.genre}
