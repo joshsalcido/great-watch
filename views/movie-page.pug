@@ -1,8 +1,16 @@
 extends layout.pug
 
 block content
-  h2= movie.title
-  img.movie-img(src=`${movie.poster}`)
-  p Directed By: #{movie.director}
-  p Released: #{movie.release}
-  p Genre(s): #{movie.genre}
+  h2= movies.title
+  img.movie-img(src=`${movies.poster}`)
+  div.rating
+    p Ratings
+    p= avg
+  p Directed By: #{movies.director}
+  p Released: #{movies.release}
+  p Genre(s): #{movies.genre}
+  div.reviews
+    p Reviews:
+      each review in reviews
+        div.review-card
+          p= review
