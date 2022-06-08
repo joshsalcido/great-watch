@@ -8,12 +8,12 @@ module.exports = {
 
       Example:
        */
-      return queryInterface.bulkInsert('Shelves', [{
-        name: 'Bad Movies',
-        userId: 1,
-        createdAt: new Date(),
-        updatedAt: new Date(),
-      }], {});
+    return queryInterface.bulkInsert('Shelves', [{
+      name: 'Bad Movies',
+      userId: 1,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    }], {});
 
   },
 
@@ -24,7 +24,7 @@ module.exports = {
 
       Example:
       */
-      return queryInterface.bulkDelete('Shelves', null, {});
+    return queryInterface.bulkDelete('Shelves', null, {});
 
   }
 };
