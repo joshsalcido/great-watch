@@ -9,5 +9,9 @@ for (let i = 0; i < deleteButton.length; i++) {
     const container = document.getElementById(reviewId)
     container.remove()
 
+    const deletePls = await fetch('/review/:id(\\d+)', {
+      method: "DELETE"
+    })
+
   })
 }

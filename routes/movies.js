@@ -40,9 +40,15 @@ router.get(
   })
 );
 
-// router.delete('/movies/:id(\\d+)', async(req,res) => {
-//   const review = await db.Review.findByPk(req.params.id)
-// })
+router.delete('/review/:id(\\d+)', asyncHandler (async(req,res) => {
+  const review = await db.Review.findByPk(req.params.id)
+  if(review) {
+    await review.destroy()
+    res.status(200).json({ message: "Delete successful!"})
+  } else {
+    res.status(400).json({message: "It didn't work :("})
+  }
+}))
 
 router.post("/movies/:id(\\d+)",
   // restoreUser,
