@@ -1,7 +1,16 @@
-# Express Project Skeleton
+# WatchThis
 
-Use this project skeleton as a starting point for structuring your app. Things to note
-* Sequelize configuration has not yet been added -- you will need to set that up yourself
-* You may find yourself wanting to use javascript -- js files can be added in `public/javascripts` and should be appended to the Pug templates as needed
-* CSS files can go in `public/stylesheets` and also will need to be added to Pug templates
-# march22_starter
+WatchThis is a full-stack, single-page-application clone of Goodreads. Users can view a list of movies from our data base, create bookshelves and add movies to them. Each movie can be rated and reviewed. <a href="/"> Live Demo</a>
+
+### Technologies
+
+- Frontend: NodeJS, Pug, HTML 5, CSS 3
+- Backend: Express, PostgreSQL
+- Heroku (website hosting)
+
+### Features
+
+- User authentication (sign-up, login, logout) with security
+- Provide a demo user to login to check out the site
+- Ability for clients to create their movie shelves
+- Ability for clients to write reviews and/or rate the movies
