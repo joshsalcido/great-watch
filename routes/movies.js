@@ -40,6 +40,10 @@ router.get(
   })
 );
 
+// router.delete('/movies/:id(\\d+)', async(req,res) => {
+//   const review = await db.Review.findByPk(req.params.id)
+// })
+
 router.post("/movies/:id(\\d+)",
   // restoreUser,
   // requireAuth,
