@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
@@ -8,20 +8,22 @@ module.exports = {
 
       Example:
       */
-      return queryInterface.bulkInsert('Movies', [
+    return queryInterface.bulkInsert(
+      "Movies",
+      [
         {
-          title: 'Cars',
-          poster: 'https://farm8.staticflickr.com/7457/13104485265_ddd94e847c_o.jpg',
-          director: 'John Lasseter',
+          title: "Cars",
+          poster:
+            "https://farm8.staticflickr.com/7457/13104485265_ddd94e847c_o.jpg",
+          director: "John Lasseter",
           release: 2006,
-          genre: 'Animation/Kids',
-          reviewId: 1,
-          ratingId: 1,
+          genre: "Animation/Kids",
           createdAt: new Date(),
           updatedAt: new Date(),
-        }
-      ], {});
-
+        },
+      ],
+      {}
+    );
   },
 
   down: (queryInterface, Sequelize) => {
@@ -31,7 +33,6 @@ module.exports = {
 
       Example:
       */
-      return queryInterface.bulkDelete('Movies', null, {});
-
-  }
+    return queryInterface.bulkDelete("Movies", null, {});
+  },
 };
