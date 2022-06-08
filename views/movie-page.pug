@@ -15,7 +15,7 @@ block content
   div.reviews
     p Reviews:
       each userReview in userReviews
-        div.review-card
+        div(class="review-card" id=`${userReview.id}`)
           p= userReview.reviewBody
           if loggedInUser === userReview.userId
             button(class="delete-button" id=`delete-${userReview.id}`) Delete
