@@ -17,22 +17,12 @@ router.get(
   asyncHandler(async (req, res) => {
     const movieId = parseInt(req.params.id, 10);
     const movies = await db.Movie.findByPk(movieId, { include: db.Review });
-    const reviews = movies.Reviews.map((movie) => movie.dataValues.reviewBody);
-
+    const reviews = await db.Review.findAll({ include: db.User });
+    const userReviews = movies.Reviews.map((movie) => movie.dataValues.reviewBody);
     const ratings = movies.Reviews.map((movie) => movie.dataValues.rating);
-
-    // const average = (rating) => {
-    //   let sum = 0;
-    //   for (let i = 0; i < rating.length; i++) {
-    //     sum += rating[i];
-    //   }
-    //   return sum / rating.length;
-    // };
-
     const avg = ratings.reduce((a, b) => a + b) / ratings.length;
-
-    console.log(avg);
-    res.render("movie-page", { movies, reviews, avg });
+    console.log(reviews.map((review) => review.User.dataValues.userName));
+    res.render("movie-page", { movies, userReviews, avg });
   })
 );
 
