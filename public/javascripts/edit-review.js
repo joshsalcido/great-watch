@@ -30,7 +30,11 @@ for (let i = 0; i < editButtons.length; i++) {
       const data = await res.json();
       if (data.message === "Successful Edit!") {
         const reviewBodyEl = document.getElementById(`${reviewId}-reviewBody`);
-      }
-    })
-  })
-}
+        const ratingEl = document.getElementById(`${reviewId}-rating`)
+        form.classList.add('hidden');
+      } else {
+        // nothing yet
+      };
+    });
+  });
+};
