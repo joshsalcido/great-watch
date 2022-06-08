@@ -19,6 +19,7 @@ block content
   div.review-reveal
   div.review-form
     form(action=`/movies/${movieId}` method="post")
+      input(type="hidden" name="_csrf" value=csrfToken)
       label Leave a review
       textarea.review-body(name="reviewBody")
       label Rating
