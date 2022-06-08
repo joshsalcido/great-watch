@@ -14,8 +14,8 @@ for (let i = 0; i < editButtons.length; i++) {
     const submitButton = document.getElementById(`edit-${reviewId}`);
     submitButton.addEventListener('click', async (submitEvent) => {
       submitEvent.preventDefault();
-      const reviewBody = document.getElementById(`${reviewId}-edit-body`);
-      const rating = document.getElementById(`${reviewId}-edit-rating`);
+      const reviewBody = document.getElementById(`${reviewId}-edit-body`).value;
+      const rating = document.getElementById(`${reviewId}-edit-rating`).value;
 
       const res = await fetch(`/review/${reviewId}`, {
         method: 'PUT',
