@@ -22,7 +22,7 @@ block content
           if loggedInUser === userReview.userId
             button(class="delete-button" id=`delete-${userReview.id}`) Delete
             button(class="edit-button" id=`edit-${userReview.id}`) Edit
-            form(class="hidden" id=`edit-${userReview.id}`)
+            form(class="hidden" id=`form-${userReview.id}`)
               label Review:
               input(type="text" name="title" value=userReview.reviewBody id=`${userReview.id}-edit-body`)
               label Rating
@@ -32,7 +32,7 @@ block content
                   option(value=3) 3
                   option(value=4) 4
                   option(value=5) 5
-                button(class="edit-submit" id=`edit-${userReview.id}`) Submit Edit
+                button(class="edit-submit" id=`edit-submit-${userReview.id}`) Submit Edit
   div.review-reveal
   div.review-form
     form(action=`/movies/${movieId}` method="post")

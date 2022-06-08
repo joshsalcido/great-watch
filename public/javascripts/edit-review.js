@@ -5,13 +5,14 @@ for (let i = 0; i < editButtons.length; i++) {
   button.addEventListener('click', (e) => {
     const reviewId = e.target.id.split('-')[1];
     console.log(reviewId);
-    const form = document.getElementById(`edit-${reviewId}`);
+    const form = document.getElementById(`form-${reviewId}`);
+    console.log(form);
     if (form.classList.contains('hidden')) {
       form.classList.remove('hidden');
     } else {
       form.classList.add('hidden');
     };
-    const submitButton = document.getElementById(`edit-${reviewId}`);
+    const submitButton = document.getElementById(`edit-submit-${reviewId}`);
     submitButton.addEventListener('click', async (submitEvent) => {
       submitEvent.preventDefault();
       const reviewBody = document.getElementById(`${reviewId}-edit-body`).value;
