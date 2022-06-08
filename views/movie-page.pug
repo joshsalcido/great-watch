@@ -1,16 +1,31 @@
 extends layout.pug
 
 block content
-  h2= movies.title
-  img.movie-img(src=`${movies.poster}`)
-  div.rating
-    p Ratings
-    p= avg
-  p Directed By: #{movies.director}
-  p Released: #{movies.release}
-  p Genre(s): #{movies.genre}
+  link(rel="stylesheet" href="/stylesheets/movie-page-styles.css")
+  div.movie-details
+    h2= movies.title
+    img.movie-img(src=`${movies.poster}`)
+    div.rating
+      p Ratings
+      p= avg
+    p Directed By: #{movies.director}
+    p Released: #{movies.release}
+    p Genre(s): #{movies.genre}
   div.reviews
     p Reviews:
       each userReview in userReviews
         div.review-card
           p= userReview
+  div.review-reveal
+  div.review-form
+    form(action=`/movies/${movieId}` method="post")
+      label Leave a review
+      textarea.review-body(name="reviewBody")
+      label Rating
+      select.rating-score(name="rating")
+        option(value=1) 1
+        option(value=2) 2
+        option(value=3) 3
+        option(value=4) 4
+        option(value=5) 5
+      button.submit-review(type="submit") Submit Review
