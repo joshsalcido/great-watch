@@ -1,8 +1,7 @@
-const deleteButton = document.querySelectorAll(".delete-button")
+const deleteButton = Array.from(document.getElementsByClassName("delete-button"))
 console.log(deleteButton)
-
-for (i = 0; i < deleteButton.length; i++) {
-  const button = deleteButton[i]
+for (let button of deleteButton) {
+  console.log(button)
   button.addEventListener("click", async(e)=> {
     e.preventDefault()
     const reviewId = e.target.id.split("-")[2]
