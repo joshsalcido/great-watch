@@ -18,7 +18,7 @@ block content
         div.review-card
           p= userReview.reviewBody
           if loggedInUser === userReview.userId
-            button.delete-button Delete
+            button(class="delete-button" id=`delete-${userReview.id}`) Delete
             button.edit-button Edit
   div.review-reveal
   div.review-form
