@@ -1,10 +1,10 @@
-const deleteButton = Array.from(document.getElementsByClassName("delete-button"))
+const deleteButton = document.getElementsByClassName("delete-button")
 console.log(deleteButton)
-for (let button of deleteButton) {
-  console.log(button)
+for (let i = 0; i < deleteButton.length; i++) {
+  const button = deleteButton[i]
   button.addEventListener("click", async(e)=> {
     e.preventDefault()
-    const reviewId = e.target.id.split("-")[2]
+    const reviewId = e.target.id
     console.log(reviewId)
   })
 }
