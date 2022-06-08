@@ -8,9 +8,6 @@ module.exports = (sequelize, DataTypes) => {
       director: DataTypes.STRING,
       release: DataTypes.INTEGER,
       genre: DataTypes.STRING,
-      reviewId: DataTypes.INTEGER,
-      ratingId: DataTypes.INTEGER,
-      // shelfId: DataTypes.INTEGER,
     },
     {}
   );
@@ -21,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: "movieId",
     };
     Movie.belongsToMany(models.Shelf, columnMapping);
-    Movie.hasMany(models.Review, { foreignKey: "id" });
+    Movie.hasMany(models.Review, { foreignKey: "movieId" });
   };
   return Movie;
 };
