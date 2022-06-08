@@ -1,11 +1,10 @@
-const review = require("../../db/models/review");
-
 const editButtons = document.getElementsByClassName('edit-button');
 
 for (let i = 0; i < editButtons.length; i++) {
   const button = editButtons[i];
   button.addEventListener('click', (e) => {
     const reviewId = e.target.id.split('-')[1];
+    console.log(reviewId);
     const form = document.getElementById(`edit-${reviewId}`);
     if (form.classList.contains('hidden')) {
       form.classList.remove('hidden');
@@ -16,7 +15,7 @@ for (let i = 0; i < editButtons.length; i++) {
     submitButton.addEventListener('click', async (submitEvent) => {
       submitEvent.preventDefault();
       const reviewBody = document.getElementById(`${reviewId}-edit-body`);
-      const rating = document.getElementById(`${userReview.id}-edit-rating`);
+      const rating = document.getElementById(`${reviewId}-edit-rating`);
 
       const res = await fetch(`/review/${reviewId}`, {
         method: 'PUT',
@@ -31,6 +30,8 @@ for (let i = 0; i < editButtons.length; i++) {
       if (data.message === "Successful Edit!") {
         const reviewBodyEl = document.getElementById(`${reviewId}-reviewBody`);
         const ratingEl = document.getElementById(`${reviewId}-rating`)
+        reviewBodyEl.innerHTML = data.review.reviewBody;
+        ratingEl.innerHTML = data.review.rating;
         form.classList.add('hidden');
       } else {
         // nothing yet
