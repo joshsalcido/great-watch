@@ -2,6 +2,7 @@ extends layout.pug
 
 block content
   script(src="/javascripts/delete-review.js" type="module")
+  script(src="/javascripts/edit-review.js" type="module")
   link(rel="stylesheet" href="/stylesheets/movie-page-styles.css")
   div.movie-details
     h2= movies.title
@@ -16,10 +17,22 @@ block content
     p Reviews:
       each userReview in userReviews
         div(class="review-card" id=`${userReview.id}`)
-          p= userReview.reviewBody
+          p(class="rating" id=`${userReview.id}-rating`)= userReview.rating
+          p(class="review-body" id=`${userReview.id}-reviewBody`)= userReview.reviewBody
           if loggedInUser === userReview.userId
             button(class="delete-button" id=`delete-${userReview.id}`) Delete
-            button.edit-button Edit
+            button(class="edit-button" id=`edit-${userReview.id}`) Edit
+            form(class="hidden" id=`edit-${userReview.id}`)
+              label Review:
+              input(type="text" name="title" value=userReview.reviewBody id=`${userReview.id}-edit-body`)
+              label Rating
+                select(class="rating-score" id=`${userReview.id}-edit-rating` name="rating")
+                  option(value=1) 1
+                  option(value=2) 2
+                  option(value=3) 3
+                  option(value=4) 4
+                  option(value=5) 5
+                  button(class="edit-submit" id=`edit-${userReview.id}`) Submit Edit
   div.review-reveal
   div.review-form
     form(action=`/movies/${movieId}` method="post")
