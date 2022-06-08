@@ -6,12 +6,16 @@ for (let i = 0; i < deleteButton.length; i++) {
     e.preventDefault()
     const reviewId = e.target.id.split("-")[1]
 
-    const container = document.getElementById(reviewId)
-    container.remove()
-
-    const deletePls = await fetch('/review/:id(\\d+)', {
+    const res = await fetch(`/review/${reviewId}`, {
       method: "DELETE"
     })
 
+    const data = await res.json()
+    if(data.message = "Delete successful!") {
+      const container = document.getElementById(reviewId)
+      container.remove()
+    } else {
+      console.log("It broke")
+    }
   })
 }
