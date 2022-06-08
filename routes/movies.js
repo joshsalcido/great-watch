@@ -40,14 +40,22 @@ router.get(
   })
 );
 
-router.delete('/review/:id(\\d+)', asyncHandler (async(req,res) => {
+router.delete('/review/:id(\\d+)', asyncHandler(async (req, res) => {
   const review = await db.Review.findByPk(req.params.id)
-  if(review) {
+  if (review) {
     await review.destroy()
-    res.status(200).json({ message: "Delete successful!"})
+    res.status(200).json({ message: "Delete successful!" })
   } else {
-    res.status(400).json({message: "It didn't work :("})
+    res.status(400).json({ message: "It didn't work :(" })
   }
+}));
+
+router.put('/review/:id(\\d+)', asyncHandler(async (req, res) => {
+  const review = await db.Review.findByPk(req.params.id)
+  review.reviewBody = req.body.reviewBody;
+  review.rating = req.body.rating;
+  await review.save()
+  res.json({ message: 'Successful Edit!', review });
 }))
 
 router.post("/movies/:id(\\d+)",
