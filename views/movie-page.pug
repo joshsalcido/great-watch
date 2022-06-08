@@ -11,6 +11,6 @@ block content
   p Genre(s): #{movies.genre}
   div.reviews
     p Reviews:
-      each review in reviews
+      each userReview in userReviews
         div.review-card
-          p= review
+          p= userReview
