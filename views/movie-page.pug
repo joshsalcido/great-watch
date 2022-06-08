@@ -15,7 +15,10 @@ block content
     p Reviews:
       each userReview in userReviews
         div.review-card
-          p= userReview
+          p= userReview.reviewBody
+          if loggedInUser === userReview.userId
+            button.delete-button Delete
+            button.edit-button Edit
   div.review-reveal
   div.review-form
     form(action=`/movies/${movieId}` method="post")
