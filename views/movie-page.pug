@@ -3,6 +3,8 @@ extends layout.pug
 block content
   script(src="/javascripts/delete-review.js" type="module")
   script(src="/javascripts/edit-review.js" type="module")
+  script(src="/javascripts/add-to-shelf.js" type="module")
+
   link(rel="stylesheet" href="/stylesheets/movie-page-styles.css")
   div.movie-details
     h2= movies.title
@@ -13,11 +15,11 @@ block content
     p Directed By: #{movies.director}
     p Released: #{movies.release}
     p Genre(s): #{movies.genre}
-  div.shelf-dropdown
-    select(class="shelves" id="")
+  div(class="shelf-dropdown")
+    button(id=`${movies.id}`) Add to shelf
+    select(class="shelves")
       each shelf in shelves
         option(value=`${shelf.id}`)= shelf.name
-      button(class="add-to-shelf") Add to shelf
   div.reviews
     p Reviews:
       each userReview in userReviews
