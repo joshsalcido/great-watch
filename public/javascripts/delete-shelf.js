@@ -1,9 +1,9 @@
-const addToShelfButton = document.getElementsByTagName("button")[0]
+const deleteShelfButton = document.getElementById("delete-shelf-button")
 
-addToShelfButton.addEventListener("click", async (e) => {
+deleteShelfButton.addEventListener("click", async (e) => {
   // e.preventDefault()
   const movieId = e.target.id
-  const shelfId = document.getElementById(`shelf-${shelfId}`)
+  // const shelfId = document.getElementById(`shelf-${shelfId}`)
   // const res = await fetch(`/shelves/${shelfId}`, {
   //   method: 'POST',
   //   headers: { 'Content-Type': 'application/json' },
