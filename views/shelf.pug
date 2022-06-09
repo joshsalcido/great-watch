@@ -7,6 +7,8 @@ block content
         label Shelf Name
         input(type="text" name="name")
         button(type="submit") Create
-    div.shelf Your Shelf
+    div.shelf Your Shelves:
         each shelf in shelves
-            a(href="/shelves/:shelvesId")= shelf
+            a(href=`/shelves/${shelf.id}`)= shelf.name 
+            button(class="delete-button") Delete
+            button(class="edit-button") Edit

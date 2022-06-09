@@ -22,7 +22,7 @@ router.get(
       include: db.Shelf,
     });
     const shelfName = user.Shelves;
-    const shelves = shelfName.map((shelf) => shelf.dataValues.name);
+    const shelves = shelfName.map((shelf) => shelf.dataValues);
     res.render("shelf", { shelves });
   })
 );
@@ -48,5 +48,7 @@ router.get(
     res.render("shelf-page", { shelves,reviews, movies, loggedInUser, shelfId, csrfToken: req.csrfToken() });
   })
 );
+
+
 
 module.exports = router;

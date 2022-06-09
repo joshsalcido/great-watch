@@ -16,6 +16,6 @@ block content
                         img(src=movie.poster style={width: '50px'})
                     td= movie.title
                     td= movie.director
-            each review in reviews
-                td= review.rating
-                td= review.reviewBody
+                each review in reviews
+                        td= review.rating
+                        td= review.reviewBody
