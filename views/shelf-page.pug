@@ -13,10 +13,9 @@ block content
             each movie in movies
                 tr
                     td
-                        img(src=movie.poster)
+                        img(src=movie.poster style={width: '50px'})
                     td= movie.title
                     td= movie.director
             each review in reviews
-                tr
-                    td= review.rating
-                    td= review.reviewBody
+                td= review.rating
+                td= review.reviewBody
