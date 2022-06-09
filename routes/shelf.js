@@ -37,20 +37,21 @@ router.get(
       loggedInUser = req.session.auth.userId
     }
     const shelfId = parseInt(req.params.id, 10);
-    const shelves = await db.Shelf.findByPk(shelfId, { include: { model: db.Movie, include: db.Review} });
+    const shelves = await db.Shelf.findByPk(shelfId, { include: { model: db.Movie, include: db.Review } });
     // Query for Shelves
     // const userReviews = movies.Reviews.map((movie) => movie.dataValues);
     // const ratings = movies.Reviews.map((movie) => movie.dataValues.rating);
     const mo = shelves.dataValues.Movies.map((movie) => movie.dataValues.Reviews);
-    const reviews = mo.map((review)=> review.map((reviewData) => reviewData.dataValues)).flat();
+    const reviews = mo.map((review) => review.map((reviewData) => reviewData.dataValues)).flat();
     const movies = shelves.dataValues.Movies.map((movie) => movie.dataValues);
     //console.log(movies);
     // Render shelves
-    res.render("shelf-page", { shelves,reviews, movies, loggedInUser, shelfId, csrfToken: req.csrfToken() });
+    res.render("shelf-page", { shelves, reviews, movies, loggedInUser, shelfId, csrfToken: req.csrfToken() });
   })
 );
 
+router.delete('/shelves/:id(\\d+)', asyncHandler(async (req, res) => {
 
-
+}))
 
 module.exports = router;
