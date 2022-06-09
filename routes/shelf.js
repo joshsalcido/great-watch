@@ -27,4 +27,26 @@ router.get(
   })
 );
 
+router.get(
+  "/shelves/:id(\\d+)",
+  csrfProtection,
+  asyncHandler(async (req, res) => {
+    let loggedInUser
+    if (req.session.auth) {
+      loggedInUser = req.session.auth.userId
+    }
+    const shelfId = parseInt(req.params.id, 10);
+    const shelves = await db.Shelf.findByPk(shelfId, { include: { model: db.Movie, include: db.Review} });
+    // Query for Shelves
+    // const userReviews = movies.Reviews.map((movie) => movie.dataValues);
+    // const ratings = movies.Reviews.map((movie) => movie.dataValues.rating);
+    const mo = shelves.dataValues.Movies.map((movie) => movie.dataValues.Reviews);
+    const reviews = mo.map((review)=> review.map((reviewData) => reviewData.dataValues)).flat();
+    const movies = shelves.dataValues.Movies.map((movie) => movie.dataValues);
+    //console.log(movies);
+    // Render shelves
+    res.render("shelf-page", { shelves,reviews, movies, loggedInUser, shelfId, csrfToken: req.csrfToken() });
+  })
+);
+
 module.exports = router;
