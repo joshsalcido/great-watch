@@ -82,7 +82,61 @@ module.exports = {
           genre: 'Horror',
           createdAt: new Date(),
           updatedAt: new Date(),
-        }
+        },
+        {
+          title: "Disturbia",
+          poster: "https://m.media-amazon.com/images/I/41hr93nbaAL._AC_.jpg",
+          director: "D.J. Caruso",
+          release: 2007,
+          genre: "Thriller",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          title: "Superbad",
+          poster: "https://m.media-amazon.com/images/I/517Ro9vnOML._AC_.jpg",
+          director: "Greg Mottola",
+          release: 2007,
+          genre: "Comedy",
+          createdAt: new Date(),
+          updatedAt: new Date
+        },
+        {
+          title: "Hot Fuzz",
+          poster: "https://m.media-amazon.com/images/M/MV5BMzg4MDJhMDMtYmJiMS00ZDZmLThmZWUtYTMwZDM1YTc5MWE2XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg",
+          director: "Edgar Wright",
+          release: 2007,
+          genre: "Action/Comedy",
+          createdAt: new Date(),
+          updatedAt: new Date
+        },
+        {
+          title: "Spider-Man 3",
+          poster: "https://m.media-amazon.com/images/M/MV5BYTk3MDljOWQtNGI2My00OTEzLTlhYjQtOTQ4ODM2MzUwY2IwXkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_.jpg",
+          director: "Sam Raimi",
+          release: 2007,
+          genre: "Action/Sci-fi",
+          createdAt: new Date(),
+          updatedAt: new Date
+        },
+        {
+          title: "Bridge to Terabithia",
+          poster: "https://m.media-amazon.com/images/I/51I-aNeMHiL._AC_.jpg",
+          director: "Gabor Csupo",
+          release: 2007,
+          genre: "Fantasy",
+          createdAt: new Date(),
+          updatedAt: new Date
+        },
+        {
+          title: "Into the Wild",
+          poster: "https://m.media-amazon.com/images/M/MV5BMTAwNDEyODU1MjheQTJeQWpwZ15BbWU2MDc3NDQwNw@@._V1_FMjpg_UX1000_.jpg",
+          director: "Sean Penn",
+          release: 2007,
+          genre: "Drama/Adventure",
+          createdAt: new Date(),
+          updatedAt: new Date
+        },
       ],
       {}
     );
