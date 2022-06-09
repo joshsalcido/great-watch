@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const { csrfProtection, asyncHandler } = require("./utils");
 const db = require("../db/models");
-const { route } = require("./movies");
 
 router.post(
   "/shelves",
@@ -51,9 +50,21 @@ router.get(
 );
 
 router.delete('/shelves/:id(\\d+)', asyncHandler(async (req, res) => {
-  const shelf = await db.Shelf.findByPk(req.params.id)
+  console.log('***************************')
+  const shelf = await db.Shelf.findByPk(req.params.id);
+  // console.log(shelf);
+  const movies = await db.MovieShelf.findAll({
+    where: {
+      shelfId: shelf.id
+    }
+  });
+  let movieIds = movies.map((movie) => { return movie.dataValues.movieId })
+  // console.log(movieIds);
   if (shelf) {
+    await db.MovieShelf.destroy({ where: { movieId: movieIds } });
     await shelf.destroy();
+    // await movies.destroy()
+    //   .then(shelf.destroy())
     res.status(200).json({ message: "Delete successful!" });
   } else {
     res.status(400).json({ message: "Unsuccessful" });

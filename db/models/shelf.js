@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
   const Shelf = sequelize.define('Shelf', {
     name: DataTypes.STRING,
     userId: DataTypes.INTEGER,
-   // movieId: DataTypes.INTEGER
+    // movieId: DataTypes.INTEGER
   }, {});
   Shelf.associate = function (models) {
     const columnMapping = {
@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
       otherKey: "movieId",
       foreignKey: "shelfId",
     };
-    Shelf.belongsToMany(models.Movie, columnMapping);
+    Shelf.belongsToMany(models.Movie, columnMapping, { onDelete: 'CASCADE', hooks: true });
     Shelf.belongsTo(models.User, { foreignKey: 'userId' });
   };
   return Shelf;

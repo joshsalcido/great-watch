@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     movieId: DataTypes.INTEGER,
     shelfId: DataTypes.INTEGER
   }, {});
-  MovieShelf.associate = function(models) {
+  MovieShelf.associate = function (models) {
     // associations can be defined here
     // MovieShelf.hasOne(models.Shelf, { foreignKey: 'shelfId'})
     // MovieShelf.hasMany(models.Movie, { foreignKey: 'id'})
