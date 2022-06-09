@@ -26,6 +26,8 @@ router.get(
     // Query for Shelves
     const userReviews = movies.Reviews.map((movie) => movie.dataValues);
     const ratings = movies.Reviews.map((movie) => movie.dataValues.rating);
+    const shelves = await db.Shelf.findAll({where: {userId: loggedInUser}})
+
     let avg;
     if (!ratings.length) {
       avg = 'There are no ratings yet! Be the first!'
@@ -33,7 +35,7 @@ router.get(
       avg = ratings.reduce((a, b) => a + b) / ratings.length;
     }
     // Render shelves
-    res.render("movie-page", { movies, loggedInUser, movieId, userReviews, avg, csrfToken: req.csrfToken() });
+    res.render("movie-page", { movies, loggedInUser, movieId, userReviews, avg, shelves, csrfToken: req.csrfToken() });
   })
 );
 

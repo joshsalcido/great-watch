@@ -13,6 +13,11 @@ block content
     p Directed By: #{movies.director}
     p Released: #{movies.release}
     p Genre(s): #{movies.genre}
+  div.shelf-dropdown
+    select(class="shelves" id="")
+      each shelf in shelves
+        option(value=`${shelf.id}`)= shelf.name
+      button(class="add-to-shelf") Add to shelf
   div.reviews
     p Reviews:
       each userReview in userReviews
