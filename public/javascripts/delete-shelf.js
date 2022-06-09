@@ -1,16 +1,19 @@
-const deleteShelfButton = document.getElementById("delete-shelf-button")
+const deleteShelfButtons = document.getElementsByClassName("delete-shelf-button")
 
-deleteShelfButton.addEventListener("click", async (e) => {
-  // e.preventDefault()
-  const shelfId = e.target.id.split('-')[1];
-  const res = await fetch(`/shelves/${shelfId}`, {
-    method: "DELETE"
-  });
-  const data = await res.json()
-  if (data.message = "Delete successful!") {
-    const container = document.getElementById(shelfId)
-    container.remove()
-  } else {
-    console.log("Unsuccessful")
-  }
-})
+const shelfCards = document.getElementsByClassName('shelf-card');
+
+for (let i = 0; i < shelfCards.length; i++) {
+  const card = shelfCards[i];
+  card.addEventListener("click", async (e) => {
+    // e.preventDefault()
+    const cardId = e.currentTarget.id;
+    const res = await fetch(`/shelves/${cardId}`, {
+      method: "DELETE"
+    });
+    const data = await res.json()
+    if (data.message = "Delete successful!") {
+      const container = document.getElementById(cardId)
+      container.remove()
+    }
+  })
+}

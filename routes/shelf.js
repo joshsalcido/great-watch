@@ -51,7 +51,13 @@ router.get(
 );
 
 router.delete('/shelves/:id(\\d+)', asyncHandler(async (req, res) => {
-
-}))
+  const shelf = await db.Shelf.findByPk(req.params.id)
+  if (shelf) {
+    await shelf.destroy();
+    res.status(200).json({ message: "Delete successful!" });
+  } else {
+    res.status(400).json({ message: "Unsuccessful" });
+  };
+}));
 
 module.exports = router;
