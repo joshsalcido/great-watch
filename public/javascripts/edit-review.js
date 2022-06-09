@@ -17,7 +17,6 @@ for (let i = 0; i < editButtons.length; i++) {
       submitEvent.preventDefault();
       const reviewBody = document.getElementById(`${reviewId}-edit-body`).value;
       const rating = document.getElementById(`${reviewId}-edit-rating`).value;
-
       const res = await fetch(`/review/${reviewId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
@@ -26,7 +25,6 @@ for (let i = 0; i < editButtons.length; i++) {
           rating
         })
       });
-
       const data = await res.json();
       if (data.message === "Successful Edit!") {
         const reviewBodyEl = document.getElementById(`${reviewId}-reviewBody`);
