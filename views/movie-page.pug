@@ -16,6 +16,7 @@ block content
   div.reviews
     p Reviews:
       each userReview in userReviews
+        //- Display Usernames beside reviews
         div(class="review-card" id=`${userReview.id}`)
           p(class="rating" id=`${userReview.id}-rating`)= userReview.rating
           p(class="review-body" id=`${userReview.id}-reviewBody`)= userReview.reviewBody
