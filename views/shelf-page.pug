@@ -10,4 +10,12 @@ block content
                 th Avg Rating
                 th Review
         tbody
-          
+            each movie in movies
+                tr
+                    td
+                        img(src=movie.poster style={width: '50px'})
+                    td= movie.title
+                    td= movie.director
+                each review in reviews
+                        td= review.rating
+                        td= review.reviewBody
