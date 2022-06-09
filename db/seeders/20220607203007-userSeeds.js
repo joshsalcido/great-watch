@@ -8,7 +8,8 @@ module.exports = {
 
       Example:
        */
-      return queryInterface.bulkInsert('Users', [{
+    return queryInterface.bulkInsert('Users', [
+      {
         firstName: 'Josh',
         lastName: 'Salcido',
         userName: 'JoshS',
@@ -16,7 +17,17 @@ module.exports = {
         password: 'trunkSbulbs#7',
         createdAt: new Date(),
         updatedAt: new Date(),
-      }], {});
+      },
+      {
+        firstName: 'Moviegoer',
+        lastName: 'MacGillicuddy',
+        userName: 'iheartmovies',
+        email: 'mmacgillicuddy@mailme.com',
+        password: '1heartM0vies!',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      }
+    ], {});
 
   },
 
@@ -27,6 +38,6 @@ module.exports = {
 
       Example:
       */
-      return queryInterface.bulkDelete('Users', null, {});
+    return queryInterface.bulkDelete('Users', null, {});
   }
 };

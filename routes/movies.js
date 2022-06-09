@@ -8,6 +8,7 @@ router.get(
   "/movies",
   asyncHandler(async (req, res) => {
     const movies = await db.Movie.findAll();
+    // Query for and Render Shelves
     res.render("movies", { movies });
   })
 );
@@ -22,6 +23,7 @@ router.get(
     }
     const movieId = parseInt(req.params.id, 10);
     const movies = await db.Movie.findByPk(movieId, { include: db.Review });
+    // Query for Shelves
     const userReviews = movies.Reviews.map((movie) => movie.dataValues);
     const ratings = movies.Reviews.map((movie) => movie.dataValues.rating);
     let avg;
@@ -30,6 +32,7 @@ router.get(
     } else {
       avg = ratings.reduce((a, b) => a + b) / ratings.length;
     }
+    // Render shelves
     res.render("movie-page", { movies, loggedInUser, movieId, userReviews, avg, csrfToken: req.csrfToken() });
   })
 );

@@ -19,6 +19,22 @@ module.exports = {
           createdAt: new Date(),
           updatedAt: new Date(),
         },
+        {
+          rating: 4,
+          reviewBody: "Great Movie!",
+          userId: 2,
+          movieId: 5,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+        {
+          rating: 5,
+          reviewBody: "The perfect film!",
+          userId: 2,
+          movieId: 7,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        }
       ],
       {}
     );
