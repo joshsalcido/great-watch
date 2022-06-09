@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const { csrfProtection, asyncHandler } = require("./utils");
 const db = require("../db/models");
-const { route } = require("./movies");
 
 router.post(
   "/shelves",
@@ -37,20 +36,39 @@ router.get(
       loggedInUser = req.session.auth.userId
     }
     const shelfId = parseInt(req.params.id, 10);
-    const shelves = await db.Shelf.findByPk(shelfId, { include: { model: db.Movie, include: db.Review} });
+    const shelves = await db.Shelf.findByPk(shelfId, { include: { model: db.Movie, include: db.Review } });
     // Query for Shelves
     // const userReviews = movies.Reviews.map((movie) => movie.dataValues);
     // const ratings = movies.Reviews.map((movie) => movie.dataValues.rating);
     const mo = shelves.dataValues.Movies.map((movie) => movie.dataValues.Reviews);
-    const reviews = mo.map((review)=> review.map((reviewData) => reviewData.dataValues)).flat();
+    const reviews = mo.map((review) => review.map((reviewData) => reviewData.dataValues)).flat();
     const movies = shelves.dataValues.Movies.map((movie) => movie.dataValues);
     //console.log(movies);
     // Render shelves
-    res.render("shelf-page", { shelves,reviews, movies, loggedInUser, shelfId, csrfToken: req.csrfToken() });
+    res.render("shelf-page", { shelves, reviews, movies, loggedInUser, shelfId, csrfToken: req.csrfToken() });
   })
 );
 
-
-
+router.delete('/shelves/:id(\\d+)', asyncHandler(async (req, res) => {
+  console.log('***************************')
+  const shelf = await db.Shelf.findByPk(req.params.id);
+  // console.log(shelf);
+  const movies = await db.MovieShelf.findAll({
+    where: {
+      shelfId: shelf.id
+    }
+  });
+  let movieIds = movies.map((movie) => { return movie.dataValues.movieId })
+  // console.log(movieIds);
+  if (shelf) {
+    await db.MovieShelf.destroy({ where: { movieId: movieIds } });
+    await shelf.destroy();
+    // await movies.destroy()
+    //   .then(shelf.destroy())
+    res.status(200).json({ message: "Delete successful!" });
+  } else {
+    res.status(400).json({ message: "Unsuccessful" });
+  };
+}));
 
 module.exports = router;

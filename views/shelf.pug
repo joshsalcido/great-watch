@@ -10,5 +10,6 @@ block content
         button(type="submit") Create
     div.shelf Your Shelves:
         each shelf in shelves
-            a(href=`/shelves/${shelf.id}`)= shelf.name
-            button(id="delete-shelf-button") Delete
+            div(class="shelf-card" id=shelf.id)
+                a(href=`/shelves/${shelf.id}`)= shelf.name
+                button(class="delete-shelf-button") Delete
