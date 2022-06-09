@@ -33,7 +33,6 @@ block content
                   option(value=4) 4
                   option(value=5) 5
                 button(class="edit-submit" id=`edit-submit-${userReview.id}`) Submit Edit
-  div.review-reveal
   div.review-form
     form(action=`/movies/${movieId}` method="post")
       input(type="hidden" name="_csrf" value=csrfToken)

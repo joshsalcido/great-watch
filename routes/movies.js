@@ -20,10 +20,8 @@ router.get(
     if (req.session.auth) {
       loggedInUser = req.session.auth.userId
     }
-
     const movieId = parseInt(req.params.id, 10);
     const movies = await db.Movie.findByPk(movieId, { include: db.Review });
-    // const reviews = await db.Review.findAll({ include: db.User });
     const userReviews = movies.Reviews.map((movie) => movie.dataValues);
     const ratings = movies.Reviews.map((movie) => movie.dataValues.rating);
     let avg;
@@ -32,11 +30,7 @@ router.get(
     } else {
       avg = ratings.reduce((a, b) => a + b) / ratings.length;
     }
-    // console.log(reviews.map((review) => review.User.dataValues.userName));
-    console.log("--------------")
-    const userId = movies.dataValues.Reviews.map((review) => review.dataValues.userId)
-
-    res.render("movie-page", { movies, loggedInUser, movieId, userReviews, userId, avg, csrfToken: req.csrfToken() });
+    res.render("movie-page", { movies, loggedInUser, movieId, userReviews, avg, csrfToken: req.csrfToken() });
   })
 );
 
@@ -59,9 +53,6 @@ router.put('/review/:id(\\d+)', asyncHandler(async (req, res) => {
 }))
 
 router.post("/movies/:id(\\d+)",
-  // restoreUser,
-  // requireAuth,
-  // csrfProtection,
   asyncHandler(async (req, res) => {
     const movieId = parseInt(req.params.id, 10);
     console.log(req.body)
@@ -69,7 +60,6 @@ router.post("/movies/:id(\\d+)",
       rating,
       reviewBody,
     } = req.body
-    // console.log();
     const review = await db.Review.create({
       rating: +rating,
       reviewBody,
