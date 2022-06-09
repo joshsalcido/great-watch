@@ -19,10 +19,9 @@ block content
     each shelf in shelves
       form(action=`/shelves/${shelf.id}` method="POST")
         //- input(type="hidden" name="_csrf" value=csrfToken)
-        button(id=`movie-${movies.id}` value=movies.id type="submit") Add #{movies.title} to shelf
-        //- label
-        //- input(type="submit") Add to shelf
-        select(class="shelves")
+        button(id=`movie-${movies.id}` type="submit") Add #{movies.title} to shelf
+        input(type="hidden", name="moviesId", value=movies.id)
+        select(class="shelves" name=movies.id)
           option(value=`${shelf.id}` id=`shelf-${shelf.id}`)= shelf.name
   div.reviews
     p Reviews:

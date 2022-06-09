@@ -77,12 +77,13 @@ router.post("/movies/:id(\\d+)",
 
 router.post("/shelves/:id(\\d+)", asyncHandler(async (req, res) => {
   const shelfId = parseInt(req.params.id, 10)
+  const { moviesId } = req.body
 
+  const movieShelf = await db.MovieShelf.create({
+    shelfId: shelfId,
+    movieId: moviesId
+  })
 
-  // const movieShelf = await db.MovieShelf.create({
-  //   shelfId: shelfId,
-  //   movieId:
-  // })
   res.redirect(`/shelves/${shelfId}`)
 }))
 
