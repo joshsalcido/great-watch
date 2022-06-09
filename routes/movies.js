@@ -3,6 +3,7 @@ const router = express.Router();
 const db = require("../db/models");
 const { asyncHandler, csrfProtection } = require("./utils");
 const { restoreUser, requireAuth } = require('../auth');
+const { Router } = require("express");
 
 router.get(
   "/movies",
@@ -26,6 +27,8 @@ router.get(
     // Query for Shelves
     const userReviews = movies.Reviews.map((movie) => movie.dataValues);
     const ratings = movies.Reviews.map((movie) => movie.dataValues.rating);
+    const shelves = await db.Shelf.findAll({ where: { userId: loggedInUser } })
+
     let avg;
     if (!ratings.length) {
       avg = 'There are no ratings yet! Be the first!'
@@ -33,7 +36,7 @@ router.get(
       avg = ratings.reduce((a, b) => a + b) / ratings.length;
     }
     // Render shelves
-    res.render("movie-page", { movies, loggedInUser, movieId, userReviews, avg, csrfToken: req.csrfToken() });
+    res.render("movie-page", { movies, loggedInUser, movieId, userReviews, avg, shelves, csrfToken: req.csrfToken() });
   })
 );
 
@@ -58,7 +61,7 @@ router.put('/review/:id(\\d+)', asyncHandler(async (req, res) => {
 router.post("/movies/:id(\\d+)",
   asyncHandler(async (req, res) => {
     const movieId = parseInt(req.params.id, 10);
-    console.log(req.body)
+
     const {
       rating,
       reviewBody,
@@ -71,5 +74,17 @@ router.post("/movies/:id(\\d+)",
     });
     res.redirect(`/movies/${movieId}`);
   }));
+
+router.post("/shelves/:id(\\d+)", asyncHandler(async (req, res) => {
+  const shelfId = parseInt(req.params.id, 10)
+  const { moviesId } = req.body
+
+  const movieShelf = await db.MovieShelf.create({
+    shelfId: shelfId,
+    movieId: moviesId
+  })
+
+  res.redirect(`/shelves/${shelfId}`)
+}))
 
 module.exports = router;

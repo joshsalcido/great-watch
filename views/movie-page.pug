@@ -3,6 +3,7 @@ extends layout.pug
 block content
   script(src="/javascripts/delete-review.js" type="module")
   script(src="/javascripts/edit-review.js" type="module")
+
   link(rel="stylesheet" href="/stylesheets/movie-page-styles.css")
   div.movie-details
     h2= movies.title
@@ -13,6 +14,14 @@ block content
     p Directed By: #{movies.director}
     p Released: #{movies.release}
     p Genre(s): #{movies.genre}
+  div(class="shelf-dropdown")
+    each shelf in shelves
+      form(action=`/shelves/${shelf.id}` method="POST")
+        //- input(type="hidden" name="_csrf" value=csrfToken)
+        button(id=`movie-${movies.id}` type="submit") Add #{movies.title} to shelf
+        input(type="hidden", name="moviesId", value=movies.id)
+        select(class="shelves" name=movies.id)
+          option(value=`${shelf.id}` id=`shelf-${shelf.id}`)= shelf.name
   div.reviews
     p Reviews:
       each userReview in userReviews

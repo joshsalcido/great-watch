@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { csrfProtection, asyncHandler } = require("./utils");
 const db = require("../db/models");
+const { route } = require("./movies");
 
 router.post(
   "/shelves",
@@ -48,6 +49,7 @@ router.get(
     res.render("shelf-page", { shelves,reviews, movies, loggedInUser, shelfId, csrfToken: req.csrfToken() });
   })
 );
+
 
 
 
