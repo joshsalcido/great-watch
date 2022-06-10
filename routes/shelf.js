@@ -37,7 +37,7 @@ router.get(
     }
     const shelfId = parseInt(req.params.id, 10);
     const allShelves = await db.Shelf.findAll();
-    console.log(allShelves);
+    //console.log(allShelves);
     const shelves = await db.Shelf.findByPk(shelfId, { include: { model: db.Movie, include: db.Review } });
     // Query for Shelves
     // const userReviews = movies.Reviews.map((movie) => movie.dataValues);
@@ -52,7 +52,7 @@ router.get(
 );
 
 router.delete('/shelves/:id(\\d+)', asyncHandler(async (req, res) => {
-  console.log('***************************')
+  //console.log('***************************')
   const shelf = await db.Shelf.findByPk(req.params.id);
   // console.log(shelf);
   const movies = await db.MovieShelf.findAll({
