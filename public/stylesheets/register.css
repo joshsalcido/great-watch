@@ -63,6 +63,7 @@ h2 {
   padding: 10px;
   color: white;
   background-color: black;
+  cursor: pointer;
   /* box-sizing: border-box; */
 }
 
