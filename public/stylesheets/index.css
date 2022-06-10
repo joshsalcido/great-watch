@@ -73,8 +73,9 @@ footer {
   width: 100%;
   height: 600px;
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
+  justify-content: flex-start;
+  align-items: flex-end;
+  flex-direction: column;
   font-size: xx-large;
   color: #B5FCEC;
   background-image: url('https://ei.marketwatch.com/Multimedia/2020/05/21/Photos/ZH/MW-IG985_Movies_20200521113911_ZH.jpg?uuid=378c769c-9b79-11ea-bd9d-9c8e992d421e');
@@ -88,7 +89,7 @@ footer {
 .trending {
   background-color: #222222;
   border-radius: 4px;
-  width: 70%;
+  width: 100%;
 }
 
 #trending-movies-header {
@@ -100,10 +101,9 @@ footer {
 }
 
 .trending-movies {
-  overflow: scroll;
-  overflow-y: hidden;
-  margin: 15px;
-  padding: 20px;
+  /* overflow: scroll;
+  overflow-y: hidden; */
+  padding: 15px;
   display: flex;
   justify-content: space-evenly;
   flex-direction: row;
@@ -112,6 +112,7 @@ footer {
 
 .movie {
   padding: 20px;
+  border-radius: 5px;
 }
 
 .now-showing {
@@ -154,6 +155,10 @@ footer {
   flex-direction: row;
   justify-content: space-evenly;
   font-size: large;
+}
+
+.info {
+  color: #B5FCEC;
 }
 
 .ricky-info {
