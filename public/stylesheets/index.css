@@ -48,12 +48,13 @@ footer {
 
 .headline {
   width: 100%;
-  height: 400px;
+  height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: xx-large;
-  background-image: url('images/watchThisSplash.jpg');
+  background-image: url('/images/watchThisSplash.jpg');
+  background-size: cover;
 }
 
 .center-strip {
@@ -62,21 +63,33 @@ footer {
 }
 
 .trending {
-  background-color: rgb(144, 144, 226);
+  background-color: rgb(143, 9, 9);
+
   border-radius: 4px;
   width: 70%;
+}
+
+#trending-movies-header {
+  border-style: dotted;
+  border-width: 5px;
+  color: gold;
 }
 
 .trending-movies {
   display: flex;
   justify-content: space-evenly;
-  width: 60%
+  width: 60%;
+}
+
+.movie {
+  box-shadow: 7px 5px 5px rgb(247, 247, 188);
 }
 
 .about-us {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  position: relative;
 }
 
 .ricky-info {
