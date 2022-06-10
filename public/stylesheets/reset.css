@@ -25,3 +25,30 @@ body, header, nav {
 h1 {
   font-size: 2rem;
 }
+/* Add a black background color to the top navigation */
+.nav-bar {
+  background-color: #E1E7FC;
+  overflow: hidden;
+  height: 50px;
+}
+
+.nav-bar .watchThis {
+  padding: 8px 50px;
+  font-size: 30px;
+}
+
+/* Style the links inside the navigation bar */
+.nav-bar a {
+  float: left;
+  color: #3A3765;
+  text-align: center;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.nav-bar .main-links:hover {
+  background-color: #3A3765;
+  color: #E1E7FC;
+}
