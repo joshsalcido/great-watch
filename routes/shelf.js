@@ -23,7 +23,7 @@ router.get(
     });
     const shelfName = user.Shelves;
     const shelves = shelfName.map((shelf) => shelf.dataValues);
-    res.render("shelf", { shelves,  });
+    res.render("shelf", { shelves, });
   })
 );
 
@@ -36,6 +36,8 @@ router.get(
       loggedInUser = req.session.auth.userId
     }
     const shelfId = parseInt(req.params.id, 10);
+    const allShelves = await db.Shelf.findAll();
+    console.log(allShelves);
     const shelves = await db.Shelf.findByPk(shelfId, { include: { model: db.Movie, include: db.Review } });
     // Query for Shelves
     // const userReviews = movies.Reviews.map((movie) => movie.dataValues);
@@ -45,7 +47,7 @@ router.get(
     const movies = shelves.dataValues.Movies.map((movie) => movie.dataValues);
     //console.log(movies);
     // Render shelves
-    res.render("shelf-page", { shelves, reviews, movies, loggedInUser, shelfId, csrfToken: req.csrfToken() });
+    res.render("shelf-page", { shelves, reviews, allShelves, movies, loggedInUser, shelfId, csrfToken: req.csrfToken() });
   })
 );
 
