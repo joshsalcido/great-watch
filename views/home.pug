@@ -1,4 +1,9 @@
 extends layout.pug
 
 block content
-  h1 Howdy partner
+  if locals.authenticated
+    span(class="welcome") Welcome #{user.userName}!
+    //- a(href="/") Logout
+  else
+    a(href="/login") Login
+    a(href="/register") Register
