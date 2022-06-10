@@ -1,5 +1,3 @@
-extends layout
-
 append head
   //- add page specific styles by appending to the head
   link(rel="stylesheet" href="/stylesheets/index.css")
@@ -9,46 +7,51 @@ append head
 block content
   //- Used Logged In user to hide these buttons
   div.user-bar
-    h1= title
-    a(href="/login")
-      button.user.login Login
-    a(href="/register")
-      button.user.signup Sign Up
-    a(href="/")
-      button.user.demo demo
+    div#watch-this-splash
+      h1 Watch This!
+    div.splash-header-buttons
+      a(href="/login")
+        button.user.login Login
+      a(href="/register")
+        button.user.signup Sign Up
+      a(href="/")
+        button.user.demo demo
   div.headline
     h2 Get your popcorn ready for a Great Watch
   div.center-strip
     div.trending
-      h3 Trending Movies
-      img(src="https://cdn.shopify.com/s/files/1/0057/3728/3618/products/idiocracy11_500x.jpg?v=1620076578", alt="")
-      img(src="https://farm8.staticflickr.com/7457/13104485265_ddd94e847c_o.jpg")
-      img(src="https://i.pinimg.com/originals/5a/e0/69/5ae06977dd4e2323011f3c32e0e3d34e.jpg")
-      img(src="https://i.pinimg.com/originals/6a/96/99/6a969902921e521b1775711f34378464.jpg")
+      h3#trending-movies-header Trending Movies
+      div.trending-movies
+        img.movie(src="https://cdn.shopify.com/s/files/1/0057/3728/3618/products/idiocracy11_500x.jpg?v=1620076578", alt="")
+        img.movie(src="https://farm8.staticflickr.com/7457/13104485265_ddd94e847c_o.jpg")
+        img.movie(src="https://i.pinimg.com/originals/5a/e0/69/5ae06977dd4e2323011f3c32e0e3d34e.jpg")
+        img.movie(src="https://i.pinimg.com/originals/6a/96/99/6a969902921e521b1775711f34378464.jpg")
       //- each movie in movies
       //-   div.poster-img
       //-     img= movie.poster
     div.now-showing
       h3 Now Showing
   footer
-    p About Us
-    div.ricky-info
-      p Ricky Cheung
-      a(href="https://www.linkedin.com/in/wingnincheung/") LinkedIn
-      a(href="https://github.com/WingNinCheung") GitHub
-      a(href="mailto:wingnin.cheung415@gmail.com") Email
-    div.luis-info
-      p Luis
-      a(href="https://www.linkedin.com/in/luis-sanchez-b96077235/") LinkedIn
-      a(href="https://github.com/stuffy-doll") GitHub
-      a(href="mailto:sans.boba@gmail.com") Email
-    div.josh-info
-      p Josh
-      a(href="https://www.linkedin.com/in/joshua-salcido-57036a215/") LinkedIn
-      a(href="https://github.com/joshsalcido") GitHub
-      a(href="mailto:joshuasalcido21@gmail.com") Email
-    div.wes-info
-      p Wes
-      a(href="https://www.linkedin.com/in/wesley-blackburn-333286232/") LinkedIn
-      a(href="https://github.com/wesleyblackburn90") GitHub
-      a(href="mailto:wesley.blackburn90@gmail.com") Email
+    div.about-us-footer
+      p About Us
+        div.about-us
+          div.ricky-info
+            p Ricky Cheung
+            a(href="https://www.linkedin.com/in/wingnincheung/") LinkedIn
+            a(href="https://github.com/WingNinCheung") GitHub
+            a(href="mailto:wingnin.cheung415@gmail.com") Email
+          div.luis-info
+            p Luis
+            a(href="https://www.linkedin.com/in/luis-sanchez-b96077235/") LinkedIn
+            a(href="https://github.com/stuffy-doll") GitHub
+            a(href="mailto:sans.boba@gmail.com") Email
+          div.josh-info
+            p Josh
+            a(href="https://www.linkedin.com/in/joshua-salcido-57036a215/") LinkedIn
+            a(href="https://github.com/joshsalcido") GitHub
+            a(href="mailto:joshuasalcido21@gmail.com") Email
+          div.wes-info
+            p Wes
+            a(href="https://www.linkedin.com/in/wesley-blackburn-333286232/") LinkedIn
+            a(href="https://github.com/wesleyblackburn90") GitHub
+            a(href="mailto:wesley.blackburn90@gmail.com") Email
