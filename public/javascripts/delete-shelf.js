@@ -13,7 +13,7 @@ for (let i = 0; i < shelfCards.length; i++) {
     button.addEventListener("click", async (e) => {
       e.preventDefault();
       const cardId = e.target.parentElement.id;
-      console.log(cardId);
+      //console.log(cardId);
       const res = await fetch(`/shelves/${cardId}`, {
         method: "DELETE"
       });

@@ -87,7 +87,7 @@ router.post(
       await user.save();
       loginUser(req, res, user);
       res.redirect("/");
-      console.log(firstName, lastName, userName, email, password);
+     // console.log(firstName, lastName, userName, email, password);
     } else {
       const errors = validatorErrors.array().map((error) => error.msg);
       res.render("register", {
