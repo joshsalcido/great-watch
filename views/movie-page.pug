@@ -9,7 +9,7 @@ block content
     h2= movies.title
     img.movie-img(src=`${movies.poster}`)
     div.rating
-      p Ratings
+      p Average Ratings
       p= avg
     p Directed By: #{movies.director}
     p Released: #{movies.release}
@@ -27,7 +27,7 @@ block content
       each userReview in userReviews
         //- Display Usernames beside reviews
         div(class="review-card" id=`${userReview.id}`)
-          p(class="rating" id=`${userReview.id}-rating`)= userReview.rating
+          p(class="rating" id=`${userReview.id}-rating`) Rating:#{userReview.rating}
           p(class="review-body" id=`${userReview.id}-reviewBody`)= userReview.reviewBody
           if loggedInUser === userReview.userId
             button(class="delete-button" id=`delete-${userReview.id}`) Delete
