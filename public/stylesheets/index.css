@@ -79,8 +79,7 @@ footer {
 }
 
 .center-strip {
-  display: flex;
-  flex-direction: row;
+  display: block;
 }
 
 .trending {
@@ -98,26 +97,53 @@ footer {
 }
 
 .trending-movies {
-  margin: 5px;
+  overflow: scroll;
+  overflow-y: hidden;
+  margin: 15px;
   padding: 20px;
   display: flex;
   justify-content: space-evenly;
-  width: 60%;
+  flex-direction: row;
+  width: 100%;
 }
 
 .movie {
-  box-shadow: 7px 5px 5px rgb(247, 247, 188);
+  padding: 20px;
+}
+
+.now-showing {
+  display: block;
+}
+
+#now-showing-title {
+  color: #B5FCEC;
+  font-family: "Gruppo";
+  font-size: 25px;
+  display: inline-block;
+  border: #B5FCEC 2px dotted;
+  box-sizing: border-box;
+  border-radius: 15px;
+  padding: 5px;
 }
 
 .about-us-footer {
   height: auto;
   display: block;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #B5FCEC;
+  font-family: "Gruppo";
 }
 
 .about-us {
+  background-color: #222222;
+  color: #B5FCEC;
+  font-family: "Gruppo";
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  font-size: large;
 }
 
 .ricky-info {
