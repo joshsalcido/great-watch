@@ -84,18 +84,22 @@ footer {
 }
 
 .trending {
-  background-color: rgb(143, 9, 9);
+  background-color: #222222;
   border-radius: 4px;
   width: 70%;
 }
 
 #trending-movies-header {
-  border-style: dotted;
-  border-width: 5px;
-  color: gold;
+  font-family: "Gruppo";
+  display: flex;
+  color: #B5FCEC;
+  font-size: 30px;
+  margin-left: 50px;
 }
 
 .trending-movies {
+  margin: 5px;
+  padding: 20px;
   display: flex;
   justify-content: space-evenly;
   width: 60%;
@@ -107,6 +111,7 @@ footer {
 
 .about-us-footer {
   height: auto;
+  display: block;
 }
 
 .about-us {
