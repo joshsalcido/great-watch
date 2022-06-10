@@ -1,21 +1,24 @@
 extend layout.pug
 
 block content
-    table
-        thead
-            tr
-                th Poster
-                th Title
-                th Director
-                th Avg Rating
-                th Review
-        tbody
-            each movie in movies
+        title="My Shelves"
+        link(rel='stylesheet' href='/stylesheets/shelf-page.css')
+        table
+            thead
                 tr
-                    td
-                        img(src=movie.poster style={width: '50px'})
-                    td= movie.title
-                    td= movie.director
-                    each review in reviews
-                        td= review.rating
-                        td= review.reviewBody
+                    th Poster
+                    th Title
+                    th Director
+                    th Avg Rating
+                    th Review
+            tbody
+                each movie in movies
+                    tr
+                        td
+                            img(src=movie.poster style={width: '50px'})
+                        td= movie.title
+                        td= movie.director
+                        each review in reviews
+                            td= review.rating
+                            td= review.reviewBody
+                
