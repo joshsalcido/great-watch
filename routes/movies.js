@@ -33,9 +33,8 @@ router.get(
     if (!ratings.length) {
       avg = "There are no ratings yet! Be the first!";
     } else {
-      avg = ratings.reduce((a, b) => a + b) / ratings.length;
+      avg = (ratings.reduce((a, b) => a + b) / ratings.length).toFixed(2);
     }
-    avg = avg.toFixed(2);
     // Render shelves
     res.render("movie-page", {
       movies,
