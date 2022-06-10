@@ -1,6 +1,6 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px "Gruppo","Lucida Grande", Helvetica, Arial;
 }
 
 a {
@@ -42,7 +42,6 @@ h1 {
   font-size: 30px;
 }
 
-/* Style the links inside the navigation bar */
 .nav-bar .main-links {
   float: left;
   color: #B5FCEC;
@@ -60,7 +59,6 @@ h1 {
   font-size: 17px;
 }
 
-/* Change the color of links on hover */
 .nav-bar .main-links:hover, .logout:hover {
   background-color: #B5FCEC;
   color: #3A3765;
