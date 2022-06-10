@@ -6,7 +6,7 @@ append head
   link(rel="stylesheet" href="/stylesheets/login.css")
 block content
   +validationErrorSummary(errors)
-  div.login-container
+  div.login-form-container
     form(action='/login' method='post' class="login-form")
       input(type='hidden' name='_csrf' value=csrfToken)
       +field('Username', 'userName', userName)
