@@ -34,6 +34,8 @@ body {
   display: flex;
   justify-content: center;
   /* background-color: #222222; */
+  /* background-image: url("https://wallpaperaccess.com/full/1773869.jpg");
+  background-size: contain; */
 }
 
 .py-10 {
