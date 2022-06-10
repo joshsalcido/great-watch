@@ -1,6 +1,7 @@
 append head
   //- add page specific styles by appending to the head
   link(rel="stylesheet" href="/stylesheets/index.css")
+  link(href='https://fonts.googleapis.com/css?family=Gruppo' rel='stylesheet')
   //- add page specific js
   script(src="/javascripts/index.js" type="module" defer)
 
@@ -8,7 +9,7 @@ block content
   //- Used Logged In user to hide these buttons
   div.user-bar
     div#watch-this-splash
-      h1 Watch This!
+      h1 watchThis
     div.splash-header-buttons
       a(href="/login")
         button.user.login Login

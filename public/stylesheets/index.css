@@ -1,15 +1,18 @@
 h1 {
-  color: #555555;
+  color: #B5FCEC;
+  font-family: "Gruppo";
+  font-weight: bolder;
+  font-size: 40pt;
 }
 
 body {
-  background-color: beige;
+  background-color: #222222;
   Overflow-x: scroll;
   Overflow-y: scroll;
 }
 
 .nav {
-  background-color: #e1e7fc;
+  background-color: #222222;
   color: red;
   display: flex;
   justify-content: space-around;
@@ -17,6 +20,22 @@ body {
 
 img {
   width: 150px;
+}
+
+.user.login {
+  width: 80px;
+  height: 33px;
+  border-radius: 10px;
+  background-color: #B5FCEC;
+  color: black;
+}
+
+.user.signup {
+  width: 80px;
+  height: 33px;
+  border-radius: 10px;
+  background-color: #B5FCEC;
+  color: black;
 }
 
 footer {
@@ -29,7 +48,7 @@ footer {
 
 .user-bar {
   display: inline-flex;
-  background-color: beige;
+  background-color: #222222;
 }
 
 .splash-header-buttons {
@@ -47,14 +66,15 @@ footer {
 }
 
 .headline {
+  font-family: "Gruppo";
   width: 100%;
   height: 600px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   font-size: xx-large;
-  color: whitesmoke;
-  background-image: url('https://d279m997dpfwgl.cloudfront.net/wp/2020/12/GettyImages-1150049038-1000x630.jpg');
+  color: #B5FCEC;
+  background-image: url('https://ei.marketwatch.com/Multimedia/2020/05/21/Photos/ZH/MW-IG985_Movies_20200521113911_ZH.jpg?uuid=378c769c-9b79-11ea-bd9d-9c8e992d421e');
   background-size: cover;
 }
 
