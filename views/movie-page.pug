@@ -6,22 +6,30 @@ block content
 
   link(rel="stylesheet" href="/stylesheets/movie-page-styles.css")
   div.movie-details
-    h2= movies.title
-    img.movie-img(src=`${movies.poster}`)
-    div.rating
-      p Average Ratings
-      p= avg
-    p Directed By: #{movies.director}
-    p Released: #{movies.release}
-    p Genre(s): #{movies.genre}
-  div(class="shelf-dropdown")
-    each shelf in shelves
-      form(action=`/shelves/${shelf.id}` method="POST")
-        //- input(type="hidden" name="_csrf" value=csrfToken)
-        button(id=`movie-${movies.id}` type="submit") Add #{movies.title} to shelf
-        input(type="hidden", name="moviesId", value=movies.id)
-        select(class="shelves" name=movies.id)
-          option(value=`${shelf.id}` id=`shelf-${shelf.id}`)= shelf.name
+    div.title-release
+      h2.title= movies.title
+      p Released: (#{movies.release})
+    div.movie-rating
+      img.movie-img(src=`${movies.poster}`)
+      div.rating
+        p.user-score User Score
+        if avg >= 3
+          p.score-good= avg
+        else if avg < 3
+          p.score-bad= avg
+        else if avg > 4.8
+          p.score-must-watch
+    div.director-genre
+      p Directed By: #{movies.director}
+      p Genre(s): #{movies.genre}
+    div(class="shelf-dropdown")
+      each shelf in shelves
+        form(action=`/shelves/${shelf.id}` method="POST")
+          //- input(type="hidden" name="_csrf" value=csrfToken)
+          button(id=`movie-${movies.id}` type="submit") Add #{movies.title} to shelf
+          input(type="hidden", name="moviesId", value=movies.id)
+          select(class="shelves" name=movies.id)
+            option(value=`${shelf.id}` id=`shelf-${shelf.id}`)= shelf.name
   div.reviews
     p Reviews:
       each userReview in userReviews
