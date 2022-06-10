@@ -3,18 +3,26 @@ html
   head
 append head
   link(rel="stylesheet" href="/stylesheets/login.css")
+  link(rel="stylesheet" href="/stylesheets/register.css")
+  link(href='https://fonts.googleapis.com/css?family=Gruppo' rel='stylesheet')
   script(src="/javascripts/login-demo-user.js" type="module")
   title Log In
-  +validationErrorSummary(errors)
-  div.login-form-container
-    form(action='/login' method='post' class="login-form")
+  div.form-div
+    +validationErrorSummary(errors)
+    h1 watchThis
+    h2 Sign in
+    form(action='/login' method='post' class="register-container")
       input(type='hidden' name='_csrf' value=csrfToken)
-      +field('Username', 'userName', userName)
-      +field('Password', 'password', null, 'password')
+      div.user-name(id="fill-field")
+        +field('Username', 'userName', userName)
+      div.password(id="fill-field")
+        +field('Password', 'password', null, 'password')
       div(class='py-4')
         button(type='submit' class='btn btn-primary') Login
         //- button#demo-user Demo
-        input(type="submit" value="Demo")
-        a(href='/' class='btn btn-warning ml-2') Cancel
-      div
-        p: a(href='/register') Don't have an account?
+      div(class="py-10")
+        input(type="submit" value="Demo User" class='btn btn-primary')
+
+      div(class="py-6")
+        a(href='/' class='btn btn-warning') Cancel
+        p: a(href='/register' class='btn btn-warning') Don't have an account?
