@@ -120,17 +120,6 @@ router.post(
   asyncHandler(async (req, res) => {
     // console.log("Here");
     const { userName, password } = req.body;
-
-    if (!userName) {
-      const demoUser = await db.User.findOne({
-        where: {
-          id: 2,
-        },
-      });
-      loginUser(req, res, demoUser);
-      return res.redirect("home");
-    }
-
     let errors = [];
     const validatorErrors = validationResult(req);
     if (validatorErrors.isEmpty()) {
@@ -166,16 +155,16 @@ router.post("/logout", (req, res) => {
 });
 
 router.post(
-  "/login",
-  csrfProtection,
+  "/login/demo",
   asyncHandler(async (req, res) => {
     const demoUser = await db.User.findOne({
       where: {
-        id: 1,
+        id: 2,
       },
     });
     loginUser(req, res, demoUser);
-    res.render("/", { csrfToken: req.csrfToken });
+    return res.redirect("/home");
+    // return res.redirect("home")
   })
 );
 

@@ -20,9 +20,10 @@ append head
       div(class='py-4')
         button(type='submit' class='btn btn-primary') Login
         //- button#demo-user Demo
-      div(class="py-10")
+    div(class="py-10")
+      form(action="/login/demo" method='post' class="demo-login")
+        input(type="hidden" name="_csrf" value=csrfToken)
         input(type="submit" value="Demo User" class='btn btn-primary')
-
-      div(class="py-6")
-        a(href='/' class='btn btn-warning') Cancel
-        p: a(href='/register' class='btn btn-warning') Don't have an account?
+    div(class="py-6")
+      a(href='/' class='btn btn-warning') Cancel
+      p: a(href='/register' class='btn btn-warning') Don't have an account?
