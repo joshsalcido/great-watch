@@ -1,15 +1,17 @@
 h1 {
-  color: #555555;
+  color: #B5FCEC;
+  font-family: "Gruppo";
+  font-weight: bolder;
+  font-size: 40pt;
 }
 
 body {
-  background-color: beige;
-  Overflow-x: scroll;
+  background-color: #222222;
   Overflow-y: scroll;
 }
 
 .nav {
-  background-color: #e1e7fc;
+  background-color: #222222;
   color: red;
   display: flex;
   justify-content: space-around;
@@ -17,6 +19,26 @@ body {
 
 img {
   width: 150px;
+}
+
+.user.login {
+  font-size: 20px;
+  font-weight: bold;
+  width: 130px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: #B5FCEC;
+  color: black;
+}
+
+.user.signup {
+  font-size: 20px;
+  font-weight: bold;
+  width: 130px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: #B5FCEC;
+  color: black;
 }
 
 footer {
@@ -29,7 +51,7 @@ footer {
 
 .user-bar {
   display: inline-flex;
-  background-color: beige;
+  background-color: #222222;
 }
 
 .splash-header-buttons {
@@ -37,8 +59,8 @@ footer {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  margin-left: 1350px;
-  width: 250px;
+  margin-left: 1500px;
+  width: 300px;
 }
 
 #watch-this-splash {
@@ -47,52 +69,96 @@ footer {
 }
 
 .headline {
+  font-family: "Gruppo";
   width: 100%;
   height: 600px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-end;
+  flex-direction: column;
   font-size: xx-large;
-  color: whitesmoke;
-  background-image: url('https://d279m997dpfwgl.cloudfront.net/wp/2020/12/GettyImages-1150049038-1000x630.jpg');
+  color: #B5FCEC;
+  background-image: url('https://ei.marketwatch.com/Multimedia/2020/05/21/Photos/ZH/MW-IG985_Movies_20200521113911_ZH.jpg?uuid=378c769c-9b79-11ea-bd9d-9c8e992d421e');
   background-size: cover;
 }
 
 .center-strip {
-  display: flex;
-  flex-direction: row;
+  display: block;
 }
 
 .trending {
-  background-color: rgb(143, 9, 9);
+  background-color: #222222;
   border-radius: 4px;
-  width: 70%;
+  width: 100%;
 }
 
 #trending-movies-header {
-  border-style: dotted;
-  border-width: 5px;
-  color: gold;
+  font-family: "Gruppo";
+  display: flex;
+  color: #B5FCEC;
+  font-size: 30px;
+  margin-left: 50px;
 }
 
 .trending-movies {
+  /* overflow: scroll;
+  overflow-y: hidden; */
+  padding: 15px;
   display: flex;
   justify-content: space-evenly;
-  width: 60%;
+  flex-direction: row;
+  width: 100%;
 }
 
 .movie {
-  box-shadow: 7px 5px 5px rgb(247, 247, 188);
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.now-showing {
+  display: block;
+}
+
+#now-showing-title {
+  color: #B5FCEC;
+  font-family: "Gruppo";
+  font-size: 25px;
+  display: inline-block;
+  border: #B5FCEC 2px dotted;
+  box-sizing: border-box;
+  border-radius: 15px;
+  padding: 5px;
 }
 
 .about-us-footer {
   height: auto;
+  display: block;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #B5FCEC;
+  font-family: "Gruppo";
+}
+
+#about-us-header {
+  font-size: 30px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
 }
 
 .about-us {
+  background-color: #222222;
+  color: #B5FCEC;
+  font-family: "Gruppo";
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  font-size: large;
+}
+
+.info {
+  color: #B5FCEC;
 }
 
 .ricky-info {
