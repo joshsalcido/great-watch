@@ -132,7 +132,7 @@ router.post('/login', csrfProtection, asyncHandler(async (req, res) => {
     }
   });
   loginUser(req, res, demoUser);
-  res.redirect('/')
-}))
+  res.render('/', { csrfToken: req.csrfToken });
+}));
 
 module.exports = router;
