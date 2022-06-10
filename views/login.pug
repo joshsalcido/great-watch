@@ -1,15 +1,17 @@
-extends layout.pug
-
 include utils.pug
-
-block content
+html
+  head
+append head
+  title Log In
+  link(rel="stylesheet" href="/stylesheets/login.css")
   +validationErrorSummary(errors)
-  form(action='/login' method='post')
-    input(type='hidden' name='_csrf' value=csrfToken)
-    +field('Username', 'userName', userName)
-    +field('Password', 'password', null, 'password')
-    div(class='py-4')
-      button(type='submit' class='btn btn-primary') Login
-      a(href='/' class='btn btn-warning ml-2') Cancel
-    div
-      p: a(href='/register') Don't have an account?
+  div.login-form-container
+    form(action='/login' method='post' class="login-form")
+      input(type='hidden' name='_csrf' value=csrfToken)
+      +field('Username', 'userName', userName)
+      +field('Password', 'password', null, 'password')
+      div(class='py-4')
+        button(type='submit' class='btn btn-primary') Login
+        a(href='/' class='btn btn-warning ml-2') Cancel
+      div
+        p: a(href='/register') Don't have an account?
