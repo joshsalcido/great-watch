@@ -6,14 +6,19 @@ block content
 
   link(rel="stylesheet" href="/stylesheets/movie-page-styles.css")
   div.movie-details
-    h2= movies.title
+    div.title-release
+      h2.title= movies.title
+      p Released: (#{movies.release})
     img.movie-img(src=`${movies.poster}`)
     div.rating
-      p Average Ratings
-      p= avg
-    p Directed By: #{movies.director}
-    p Released: #{movies.release}
-    p Genre(s): #{movies.genre}
+      p User Score
+      if avg >= 3
+        p.score-good= avg
+      else
+        p.score-bad= avg
+    div.director-genre
+      p Directed By: #{movies.director}
+      p Genre(s): #{movies.genre}
   div(class="shelf-dropdown")
     each shelf in shelves
       form(action=`/shelves/${shelf.id}` method="POST")
