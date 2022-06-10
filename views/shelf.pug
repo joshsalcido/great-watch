@@ -2,17 +2,19 @@ extends layout.pug
 
 block content
     script(src="/javascripts/delete-shelf.js" type="module")
+    link(rel='stylesheet' href='/stylesheets/shelf.css')
 
-    form(method="post" action="/shelves")
-        input(type="hidden" name="_csrf" value=csrfToken)
-        label Shelf Name
-        input(type="text" name="name")
-        button(type="submit") Create
-    div.shelf Your Shelves:
-        each shelf in shelves
-            div(class="shelf-card" id=shelf.id)
-                a(href=`/shelves/${shelf.id}`)= shelf.name
-                button(class="delete-shelf-button") Delete
+    div.shelf-container
+        form(method="post" action="/shelves" class="shelf-form")
+            input(type="hidden" name="_csrf" value=csrfToken)
+            label(class="shelf-label") Shelf Name
+            input(type="text" name="name")
+            button(type="submit" class="create-shelf") Create
+        div.shelf Your Shelves:
+            each shelf in shelves
+                div(class="shelf-card" id=shelf.id)
+                    a(href=`/shelves/${shelf.id}`)= shelf.name
+                    button(class="delete-shelf-button") Delete
 
     //- table
     //-     thead

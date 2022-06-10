@@ -1,0 +1,29 @@
+body {
+  background-color: #222222;
+}
+
+.shelf-form {
+  margin: 20px;
+  color: #b5fcec;
+}
+
+.shelf-label {
+  margin: 10px;
+}
+
+.create-shelf {
+  width: 70px;
+}
+
+.shelf {
+  color: #b5fcec;
+  margin: 50px;
+}
+
+.shelf-container {
+  text-align: center;
+}
+
+.shelf-card {
+  margin: 10px;
+}
