@@ -1,18 +1,30 @@
 include utils.pug
 html
   head
+      block head
+            title="Register"
+            link(rel='stylesheet' href='/stylesheets/register.css')
   body
-    +validationErrorSummary(errors)
-    form(action='/register' method='post')
-      input(type='hidden' name='_csrf' value=csrfToken)
-      +field('First Name', 'firstName', user.firstName)
-      +field('Last Name', 'lastName', user.lastName)
-      +field('User Name', 'userName', user.userName)
-      +field('Email Address', 'email', user.email)
-      +field('Password', 'password', user.password, 'password')
-      +field('Confirm Password', 'confirmPassword', '', 'password')
-      div(class='py-4')
-        button(type='submit' class='btn btn-primary') Register
-        a(href='/' class='btn btn-warning ml-2') Cancel
-    div
-      p: a(href='/login') Already have an account?
+    div.form-div
+      h1 watchThis
+      h2 Create Account
+      +validationErrorSummary(errors)
+      form(action='/register' method='post')
+        input(type='hidden' name='_csrf' value=csrfToken)
+        div.first-name(id="fill-field")
+          +field('First Name', 'firstName', user.firstName)
+        div.last-name(id="fill-field")
+          +field('Last Name', 'lastName', user.lastName)
+        div.user-name(id="fill-field")
+          +field('User Name', 'userName', user.userName)
+        div.email(id="fill-field")
+          +field('Email Address', 'email', user.email)
+        div.password(id="fill-field")
+          +field('Password', 'password', user.password, 'password')
+        div.confirmedpassword(id="fill-field")
+          +field('Confirm Password', 'confirmPassword', '', 'password')
+        div(class='py-4')
+          button(type='submit' class='btn btn-primary') Register
+          a(href='/' class='btn btn-warning ml-2') Cancel
+      div
+        p: a(href='/login') Already have an account?
