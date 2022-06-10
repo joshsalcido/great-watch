@@ -6,7 +6,20 @@ body {
 }
 
 .nav {
+  background-color: #e1e7fc;
   color: red;
   display: flex;
   justify-content: space-around;
+}
+
+img {
+  width: 150px;
+}
+
+footer {
+  background-color: #e1e7fc;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
 }
