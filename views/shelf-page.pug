@@ -3,6 +3,11 @@ extend layout.pug
 block content
         title="My Shelves"
         link(rel='stylesheet' href='/stylesheets/shelf-page.css')
+        div.my-shelves
+            p My Shelves
+            each shelf in allShelves
+                if loggedInUser === shelf.userId
+                    a(href=`/shelves/${shelf.id}`)= shelf.name
         table
             thead
                 tr
@@ -21,5 +26,3 @@ block content
                         each review in reviews
                             td= review.rating
                             td= review.reviewBody
-
-      
