@@ -1,8 +1,8 @@
-const demoButton = document.getElementById('demo-user');
+// const demoButton = document.getElementById('demo-user');
 
-demoButton.addEventListener('click', async (e) => {
-  e.preventDefault();
-  const res = await fetch('/login', {
-    method: 'POST'
-  })
-})
+// demoButton.addEventListener('click', async (e) => {
+//   e.preventDefault();
+//   const res = await fetch('/login', {
+//     method: 'POST'
+//   })
+// })
