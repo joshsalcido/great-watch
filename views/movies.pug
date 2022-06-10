@@ -2,12 +2,12 @@ extends layout.pug
 
 block content
   link(rel="stylesheet" href="/stylesheets/movies-styles.css")
-  each movie in movies
-    div.movie-field
-      h3= movie.title
-      img.movie-img(src=`${movie.poster}`)
-      p Directed By: #{movie.director}
-      p Released: #{movie.release}
-      p Genre(s): #{movie.genre}
-      a(href=`/movies/${movie.id}`) See Reviews and More
-  
+  .movie-page
+    each movie in movies
+      div.movie-field
+        h3= movie.title
+        img.movie-img(src=`${movie.poster}`)
+        p Directed By: #{movie.director}
+        p Released: #{movie.release}
+        p Genre(s): #{movie.genre}
+        a(href=`/movies/${movie.id}`) See Reviews and More
