@@ -4,12 +4,13 @@ html
       block head
             title="Register"
             link(rel='stylesheet' href='/stylesheets/register.css')
+            link(href='https://fonts.googleapis.com/css?family=Gruppo' rel='stylesheet')
   body
     div.form-div
       h1 watchThis
       h2 Create Account
       +validationErrorSummary(errors)
-      form(action='/register' method='post')
+      form(action='/register' method='post' class="register-container")
         input(type='hidden' name='_csrf' value=csrfToken)
         div.first-name(id="fill-field")
           +field('First Name', 'firstName', user.firstName)
@@ -25,6 +26,6 @@ html
           +field('Confirm Password', 'confirmPassword', '', 'password')
         div(class='py-4')
           button(type='submit' class='btn btn-primary') Register
-          a(href='/' class='btn btn-warning ml-2') Cancel
-      div
-        p: a(href='/login') Already have an account?
+        div(class='py-5')
+          a(href='/' class='cancel-button btn-warning ml-2') Cancel
+          p: a(href='/login' class="already btn-warning ml-2") Already have an account?
