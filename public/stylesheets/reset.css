@@ -27,20 +27,33 @@ h1 {
 }
 /* Add a black background color to the top navigation */
 .nav-bar {
-  background-color: #E1E7FC;
+  background-color: #222222;
   overflow: hidden;
   height: 50px;
 }
 
 .nav-bar .watchThis {
+  /* font-family: "Gruppo"; */
   padding: 8px 50px;
+  float: left;
+  color: #B5FCEC;
+  text-align: center;
+  text-decoration: none;
   font-size: 30px;
 }
 
 /* Style the links inside the navigation bar */
-.nav-bar a {
+.nav-bar .main-links {
   float: left;
-  color: #3A3765;
+  color: #B5FCEC;
+  text-align: center;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.nav-bar .logout {
+  float: right;
+  color: #B5FCEC;
   text-align: center;
   padding: 15px 30px;
   text-decoration: none;
@@ -48,7 +61,7 @@ h1 {
 }
 
 /* Change the color of links on hover */
-.nav-bar .main-links:hover {
-  background-color: #3A3765;
-  color: #E1E7FC;
+.nav-bar .main-links:hover, .logout:hover {
+  background-color: #B5FCEC;
+  color: #3A3765;
 }
