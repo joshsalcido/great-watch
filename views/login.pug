@@ -2,8 +2,9 @@ include utils.pug
 html
   head
 append head
-  title Log In
   link(rel="stylesheet" href="/stylesheets/login.css")
+  script(src="/javascripts/login-demo-user.js" type="module")
+  title Log In
   +validationErrorSummary(errors)
   div.login-form-container
     form(action='/login' method='post' class="login-form")
@@ -12,6 +13,7 @@ append head
       +field('Password', 'password', null, 'password')
       div(class='py-4')
         button(type='submit' class='btn btn-primary') Login
+        button#demo-user Demo
         a(href='/' class='btn btn-warning ml-2') Cancel
       div
         p: a(href='/register') Don't have an account?

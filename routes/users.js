@@ -110,7 +110,7 @@ router.post("/login", csrfProtection, loginValidators, asyncHandler(async (req, 
       const passwordMatched = await bcrypt.compare(password, user.password.toString());
       if (passwordMatched) {
         loginUser(req, res, user)
-        return res.redirect('/home');
+        return res.redirect('/');
       }
     }
     errors.push('Login failed for the provided Username and Password');
@@ -124,5 +124,15 @@ router.post('/logout', (req, res) => {
   logoutUser(req, res);
   res.redirect('/');
 });
+
+router.post('/login', csrfProtection, asyncHandler(async (req, res) => {
+  const demoUser = await db.User.findOne({
+    where: {
+      id: 1
+    }
+  });
+  loginUser(req, res, demoUser);
+  res.render('/', { csrfToken: req.csrfToken });
+}));
 
 module.exports = router;
