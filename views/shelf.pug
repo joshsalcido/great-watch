@@ -13,3 +13,22 @@ block content
             div(class="shelf-card" id=shelf.id)
                 a(href=`/shelves/${shelf.id}`)= shelf.name
                 button(class="delete-shelf-button") Delete
+
+    //- table
+    //-     thead
+    //-         tr
+    //-             th Poster
+    //-             th Title
+    //-             th Director
+    //-             th Avg Rating
+    //-             th Review
+    //-     tbody
+    //-         each movie in movies
+    //-             tr
+    //-                 td
+    //-                     img(src=movie.poster style={width: '50px'})
+    //-                 td= movie.title
+    //-                 td= movie.director
+    //-                 each review in reviews
+    //-                     td= review.rating
+    //-                     td= review.reviewBody

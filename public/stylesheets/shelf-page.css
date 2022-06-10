@@ -3,6 +3,7 @@ body {
 }
 
 table {
+    position: fixed;
     margin: 50px 300px;
     color: white;
     border-collapse: collapse;

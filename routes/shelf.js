@@ -23,7 +23,7 @@ router.get(
     });
     const shelfName = user.Shelves;
     const shelves = shelfName.map((shelf) => shelf.dataValues);
-    res.render("shelf", { shelves });
+    res.render("shelf", { shelves,  });
   })
 );
 
