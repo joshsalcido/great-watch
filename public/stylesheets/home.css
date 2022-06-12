@@ -1,0 +1,53 @@
+#welcome {
+  display: block;
+  width: 100%;
+  font-weight: 36pt;
+  color: #B5FCEC;
+  background-color: #222222;
+}
+
+.movie {
+  width: 150px;
+  height: 275px;
+  display: inline-flex;
+}
+
+body {
+  color: #B5FCEC;
+  background-color: #222222;
+}
+
+.left-column {
+  display: inline-flex;
+  flex-direction: column;
+  width: 30%;
+  color: #B5FCEC;
+  background-color: #222222;
+  height: auto;
+}
+
+.what-to-watch {
+  display: inline-flex;
+  flex-direction: column;
+  width: 40%;
+  color: #B5FCEC;
+  background-color: #222222;
+}
+
+.movie-facts {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 30%;
+  color: #B5FCEC;
+  background-color: #222222;
+}
+
+.movie-card {
+  display: flex;
+  padding: 20px;
+}
+
+.fun-fact {
+  padding: 20px;
+}

@@ -21,17 +21,25 @@ img {
   width: 150px;
 }
 
-.user.login {
+.user-button {
+  border: 2px solid #B5FCEC;
+  border-radius: 3rem;
+  color: #B5FCEC;
   font-size: 20px;
   font-weight: bold;
   width: 130px;
   height: 50px;
-  border-radius: 10px;
-  background-color: #B5FCEC;
-  color: black;
+  background-color: black;
+  transition: .2s transform ease-in-out;
 }
 
-.user.signup {
+.user-button:hover {
+  border: none;
+  background-color: #B5FCEC;
+  color: #222222;
+}
+
+/* .user.signup {
   font-size: 20px;
   font-weight: bold;
   width: 130px;
@@ -39,7 +47,7 @@ img {
   border-radius: 10px;
   background-color: #B5FCEC;
   color: black;
-}
+} */
 
 footer {
   background-color: #e1e7fc;
