@@ -35,7 +35,8 @@ router.get(
     if (req.session.auth) {
       loggedInUser = req.session.auth.userId
     }
-    console.log(req.session.auth.userId, '<----- LOGGED IN USER')
+    const currentUser = await db.User.findByPk(loggedInUser, {include: db.Review});
+    console.log(currentUser.Reviews, '<----- LOGGED IN USER')
     const shelfId = parseInt(req.params.id, 10);
     const allShelves = await db.Shelf.findAll();
     //console.log(allShelves);
@@ -49,8 +50,8 @@ router.get(
     // console.log(movies[0].Reviews[2])
     // console.log('****************************')
     // console.log(movies[0].Reviews)
-    // console.log('****************************')
-    // console.log(movies[3])
+    console.log('****************************')
+    console.log(movies)
     // Render shelves
     res.render("shelf-page", { shelves, reviews, allShelves, movies, loggedInUser, shelfId, csrfToken: req.csrfToken() });
   })

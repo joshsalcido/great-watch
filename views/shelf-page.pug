@@ -25,8 +25,9 @@ block content
                         td= movie.director
                         if movie.Reviews.length
                             each review in movie.Reviews
-                                td= review.rating
-                                td= review.reviewBody
+                                if review.userId === loggedInUser
+                                    td= review.rating
+                                    td= review.reviewBody
                         else
-                                td= "Leave a Rating!"
-                                td= "Leave a Review!"
+                            td= "Leave Rating!"
+                            td= "Leave a Review"
