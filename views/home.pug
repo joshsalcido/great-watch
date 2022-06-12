@@ -1,6 +1,7 @@
 extends layout.pug
 
 block content
+  link(rel="stylesheet" href="/stylesheets/home.css")
   if locals.authenticated
     span(class="welcome") Welcome #{user.userName}!
     //- a(href="/") Logout
@@ -13,16 +14,16 @@ block content
       //- for shelf in shelves
       //-   a()
   div.what-to-watch
-    div.movie1
-      href=('/movies/4')
+    div#movie1
+      img.movie(src="https://i.pinimg.com/originals/6a/96/99/6a969902921e521b1775711f34378464.jpg")
       h2 300
       p A bunch of really angry dudes kick the butts of a bunch of other really angry dudes only there are a LOT more of those other dudes. And its super stylized and cool.
-    div.movie2
-      href=('/movies/8')
+    div#movie2
+      img.movie(src="https://s3.amazonaws.com/nightjarprod/content/uploads/sites/34/2019/09/16174819/aHAbhXSWB1O6AReAxN7SW5MrmCI.jpg")
       h2 The Fast and the Furious: Tokyo Drift
       p Fast cars go skrrrrt. In Tokyo!
-    div.movie3
-      href=('/movies/10')
+    div#movie3
+      img.movie(src="https://m.media-amazon.com/images/M/MV5BYTk3MDljOWQtNGI2My00OTEzLTlhYjQtOTQ4ODM2MzUwY2IwXkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_.jpg")
       h2 Spider-man 3
       p Tobey Maguire is Spider-man and is his normal lovable self until he becomes an absolute bully
     div.movie-facts
