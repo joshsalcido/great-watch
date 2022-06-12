@@ -14,8 +14,8 @@ block content
                     th Poster
                     th Title
                     th Director
-                    th Avg Rating
-                    th Review
+                    th My Rating
+                    th My Review
             tbody
                 each movie in movies
                     tr
@@ -29,5 +29,5 @@ block content
                                     td= review.rating
                                     td= review.reviewBody
                         else
-                            td= "Leave Rating!"
-                            td= "Leave a Review"
+                            td= "Be the First to Rate!"
+                            td= "Be the First to Review!"

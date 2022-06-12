@@ -48,8 +48,8 @@ router.get(
     const reviews = mo.map((review) => review.map((reviewData) => reviewData.dataValues)).flat();
     const movies = shelves.dataValues.Movies.map((movie) => movie.dataValues);
     // console.log(movies[0].Reviews[2])
-    // console.log('****************************')
-    // console.log(movies[0].Reviews)
+    console.log('****************************')
+    console.log(reviews)
     console.log('****************************')
     console.log(movies)
     // Render shelves
