@@ -1,6 +1,10 @@
 body {
   padding: 50px;
-  font: 14px "Gruppo","Lucida Grande", Helvetica, Arial;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav-bar {
+  font-family: 'Gruppo'
 }
 
 a {
@@ -11,8 +15,21 @@ a {
   box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6, a, ol, li, ul, div, span,
-body, header, nav {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+ol,
+li,
+ul,
+div,
+span,
+body,
+header,
+nav {
   font-size: 1rem;
   color: inherit;
   background-color: transparent;
@@ -50,6 +67,7 @@ h1 {
   text-decoration: none;
   font-size: 17px;
 }
+
 .nav-bar .logout {
   float: right;
   color: #B5FCEC;
@@ -59,7 +77,8 @@ h1 {
   font-size: 17px;
 }
 
-.nav-bar .main-links:hover, .logout:hover {
+.nav-bar .main-links:hover,
+.logout:hover {
   background-color: #B5FCEC;
   color: #3A3765;
 }

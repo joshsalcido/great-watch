@@ -13,7 +13,9 @@ block content
       img.movie-img(src=`${movies.poster}`)
       div.rating
         p.user-score User Score
-        if avg >= 3
+        if avg === 'There are no ratings yet! Be the first!'
+          p No Ratings Yet! Be the first to Rate this movie!
+        else if avg >= 3
           p.score-good= avg
         else if avg < 3
           p.score-bad= avg
@@ -31,6 +33,7 @@ block content
           select(class="shelves" name=movies.id)
             option(value=`${shelf.id}` id=`shelf-${shelf.id}`)= shelf.name
   div.reviews
+    p (Note: Reviews here don't reflect the opinions of developers 😶)
     p Reviews:
       each userReview in userReviews
         //- Display Usernames beside reviews

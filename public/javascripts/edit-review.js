@@ -4,9 +4,9 @@ for (let i = 0; i < editButtons.length; i++) {
   const button = editButtons[i];
   button.addEventListener('click', (e) => {
     const reviewId = e.target.id.split('-')[1];
-   // console.log(reviewId);
+    // console.log(reviewId);
     const form = document.getElementById(`form-${reviewId}`);
-   // console.log(form);
+    // console.log(form);
     if (form.classList.contains('hidden')) {
       form.classList.remove('hidden');
     } else {
