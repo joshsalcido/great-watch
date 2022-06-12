@@ -36,7 +36,7 @@ router.get(
       loggedInUser = req.session.auth.userId
     }
     const currentUser = await db.User.findByPk(loggedInUser, {include: db.Review});
-    console.log(currentUser.Reviews, '<----- LOGGED IN USER')
+    //console.log(currentUser.Reviews, '<----- LOGGED IN USER')
     const shelfId = parseInt(req.params.id, 10);
     const allShelves = await db.Shelf.findAll();
     //console.log(allShelves);
@@ -48,12 +48,12 @@ router.get(
     const reviews = mo.map((review) => review.map((reviewData) => reviewData.dataValues)).flat();
     const movies = shelves.dataValues.Movies.map((movie) => movie.dataValues);
     // console.log(movies[0].Reviews[2])
-    console.log('****************************')
-    console.log(reviews)
-    console.log('****************************')
-    console.log(movies)
+   // console.log('****************************')
+    //console.log(reviews)
+    // console.log('****************************')
+    // console.log(movies.length)
     // Render shelves
-    res.render("shelf-page", { shelves, reviews, allShelves, movies, loggedInUser, shelfId, csrfToken: req.csrfToken() });
+    res.render("shelf-page", { shelves, reviews, allShelves, movies, currentUser, loggedInUser, shelfId, csrfToken: req.csrfToken() });
   })
 );
 

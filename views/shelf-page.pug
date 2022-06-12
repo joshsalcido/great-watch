@@ -23,11 +23,21 @@ block content
                             img(src=movie.poster style={width: '50px'})
                         td= movie.title
                         td= movie.director
-                        if movie.Reviews.length
-                            each review in movie.Reviews
-                                if review.userId === loggedInUser
+                        if currentUser.Reviews.length
+                            each review in currentUser.Reviews
+                                if review.movieId === movie.id
                                     td= review.rating
                                     td= review.reviewBody
-                        else
-                            td= "Be the First to Rate!"
-                            td= "Be the First to Review!"
+                        td= ""
+                        td= ""
+
+
+
+                        //- if movie.Reviews.length
+                        //-     each review in movie.Reviews
+                        //-         if review.userId === loggedInUser
+                        //-             td= review.rating
+                        //-             td= review.reviewBody
+                        //- else
+                        //-     td= "Be the First to Rate!"
+                        //-     td= "Be the First to Review!"
