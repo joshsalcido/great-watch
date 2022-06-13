@@ -2,9 +2,13 @@
 
 WatchThis is a full-stack clone of Goodreads. Users can view a list of movies from our data base, create bookshelves and add movies to them. Each movie can be rated and reviewed by users.
 
+![Watch_This_Landing](https://imgur.com/wNxINhh.png)
+
 ## <a href=https://watch-this-lwrj.herokuapp.com/>Live Link</a>
 
-<img src="https://imgur.com/wNxINhh"></img>
+## Database Schema
+
+![Copy of watch_this_schema](https://user-images.githubusercontent.com/96600317/172528923-7c420932-eb5b-4e71-bd8b-3a86840df2e6.png)
 
 ### Technologies
 
@@ -55,5 +59,4 @@ if (!ratings.length) {
     <a href=https://github.com/WingNinCheung>Ricky Cheung</a></li>
 </ul>
 
-<h3> watchThis Project Wiki </h3>
-<a href=https://github.com/joshsalcido/great-watch/wiki/>
+### <a href=https://github.com/joshsalcido/great-watch/wiki/>Watch This Wiki Link</a>
